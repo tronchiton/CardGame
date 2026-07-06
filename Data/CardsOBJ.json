@@ -1,0 +1,20 @@
+[
+  {
+    "type": "OBJ",
+    "title": "Espada de Hierro",
+    "description": "Una espada ligera pero afilada.",
+    "tags": [],
+    "bonusATK": 5,
+    "bonusDFS": 0,
+    "rarity": "Common"
+  },
+  {
+    "type": "OBJ",
+    "title": "Escudo de Leyenda",
+    "description": "Un escudo portado por héroes del pasado.",
+    "tags": [],
+    "bonusATK": 2,
+    "bonusDFS": 15,
+    "rarity": "Legendary"
+  }
+]
