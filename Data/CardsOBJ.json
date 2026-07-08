@@ -1,6 +1,6 @@
 [
   {
-    "type": "OBJ",
+    "ID": "IronSword",
     "title": "Espada de Hierro",
     "description": "Una espada ligera pero afilada.",
     "tags": [],
@@ -9,7 +9,7 @@
     "rarity": "Common"
   },
   {
-    "type": "OBJ",
+    "ID": "ShieldLegend",
     "title": "Escudo de Leyenda",
     "description": "Un escudo portado por héroes del pasado.",
     "tags": [],

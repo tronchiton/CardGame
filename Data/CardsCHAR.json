@@ -1,0 +1,24 @@
+[
+  {
+    "ID": "Golbin",
+    "title": "Golbin",
+    "description": "Un tio malo pequeñito",
+    "tags": [],
+    "BaseATK":4,
+    "BaseDFS":8,
+    "ATKDice":2,
+    "DFSDice":0,
+    "rarity": "Common"
+  },
+  {
+    "ID": "Human",
+    "title": "Human",
+    "description": "Un tío bastante normal",
+    "tags": [],
+    "BaseATK":8,
+    "BaseDFS":8,
+    "ATKDice":1,
+    "DFSDice":1,
+    "rarity": "Common"
+  }
+]

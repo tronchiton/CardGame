@@ -5,18 +5,18 @@ import Visual.Sprite;
 
 import java.util.ArrayList;
 
-public class Card {
-
-    public enum CardType{
-       OBJ, CHAR, BAT
-    }
-    CardType Type;
-
+public abstract class Card {
     public ArrayList<Tag> Tags= new ArrayList<>();
 
+    public enum Rarity{
+        Common, Uncommon, Rare, Epic, Legendary
+    }
+    Rarity rarity;
+
+    String ID;
     String Title;
     String Description;
 
-    Sprite MainSprite;
-    Sprite SecSprite;
+    Sprite BackSprite;
+    Sprite DecorationSprite;
 }

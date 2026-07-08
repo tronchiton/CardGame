@@ -1,13 +1,20 @@
 package PlayerRelated;
+import Cards.CHAR;
 import Cards.Card;
 import java.util.ArrayList;
+
 
 public class Player {
 
     public ArrayList<Card> Hand= new ArrayList<>();
     public ArrayList<Card> Active= new ArrayList<>();
-    int life;
 
+    CHAR race;
+    int life;
+    int ATK;
+    int DFS;
+    int ATKDice;
+    int DFSDice;
 
     public void draw(Card card){
         this.Hand.add(card);

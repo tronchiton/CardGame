@@ -1,0 +1,16 @@
+[
+  {
+    "ID": "EpicFinal",
+    "title": "Batalla Epica final",
+    "description": "Aqui se decide todo",
+    "tags": [],
+    "rarity": "Legendary"
+  },
+  {
+    "ID": "Cave",
+    "title": "Cueva pequeña",
+    "description": "Un tío bastante normal",
+    "tags": [],
+    "rarity": "Common"
+  }
+]
