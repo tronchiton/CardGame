@@ -1,4 +1,4 @@
-package Tags;
+package BoardGame.Tags;
 
 import Visual.Sprite;
 

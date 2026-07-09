@@ -1,4 +1,4 @@
-package Cards;
+package BoardGame.Cards;
 
 public class BATTLE extends Card{
 
@@ -10,7 +10,7 @@ public class BATTLE extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", Tags=" + Tags +
+                ", BoardGame.Tags=" + Tags +
                 '}';
     }
 }

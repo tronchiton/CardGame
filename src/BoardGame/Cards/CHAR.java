@@ -1,6 +1,6 @@
-package Cards;
+package BoardGame.Cards;
 
-import PlayerRelated.Player;
+import BoardGame.PlayerRelated.Player;
 
 public class CHAR extends Card{
 
@@ -30,7 +30,7 @@ public class CHAR extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", Tags=" + Tags +
+                ", BoardGame.Tags=" + Tags +
                 ", BaseATK=" + BaseATK +
                 ", BaseDFS=" + BaseDFS +
                 ", ATKDice=" + ATKDice +

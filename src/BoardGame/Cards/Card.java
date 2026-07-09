@@ -1,6 +1,6 @@
-package Cards;
+package BoardGame.Cards;
 
-import Tags.Tag;
+import BoardGame.Tags.Tag;
 import Visual.Sprite;
 
 import java.util.ArrayList;

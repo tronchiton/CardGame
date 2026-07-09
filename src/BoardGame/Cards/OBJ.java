@@ -1,4 +1,4 @@
-package Cards;
+package BoardGame.Cards;
 
 
 public class OBJ extends Card{
@@ -15,7 +15,7 @@ public class OBJ extends Card{
                  ", Title='" + Title + '\'' +
                  ", Description='" + Description + '\'' +
                  ", rarity=" + rarity +
-                 ", Tags=" + Tags +
+                 ", BoardGame.Tags=" + Tags +
                  ", BonusATK=" + BonusATK +
                  ", BonusDFS=" + BonusDFS +
                  '}';

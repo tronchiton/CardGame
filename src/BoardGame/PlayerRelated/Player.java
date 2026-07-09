@@ -1,6 +1,6 @@
-package PlayerRelated;
-import Cards.CHAR;
-import Cards.Card;
+package BoardGame.PlayerRelated;
+import BoardGame.Cards.CHAR;
+import BoardGame.Cards.Card;
 
 
 import java.util.ArrayList;

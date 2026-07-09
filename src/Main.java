@@ -1,5 +1,5 @@
 
-import Cards.*;
+import BoardGame.Cards.*;
 import Visual.Interfaz;
 
 import java.util.ArrayList;

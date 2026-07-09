@@ -1,6 +1,9 @@
-package Cards;
+package BoardGame.Cards;
 
+import Visual.Sprite;
 import com.google.gson.Gson;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +35,7 @@ public class Cardloader {
         }
 
 
-        try (FileReader reader = new FileReader("Data/Cards" + TYPE + ".json")) {
+        try (FileReader reader = new FileReader("Data/BoardGame.Cards" + TYPE + ".json")) {
 
             T[] cartasCargadas = (T[]) gson.fromJson(reader, claseArray);
 
@@ -41,8 +44,31 @@ public class Cardloader {
             }
 
             for (T carta : listaCartas) {
+
                 System.out.println("Carta cargada en ArrayList: " + carta.toString());
+
+                String rutaBack = "Backs/" + TYPE + "Back";
+                String rutaFront = "Fronts/" + TYPE + "Front";
+
+                File archivoBack = new File(rutaBack);
+                File archivoFront = new File(rutaFront);
+
+                if (!archivoBack.exists()) {
+                    System.out.println("No se encontró el archivo: " + rutaBack + ". Usando DefaultBack.");
+                    rutaBack = "Backs/DefaultBack";
+                }
+
+                if (!archivoFront.exists()) {
+                    System.out.println("No se encontró el archivo: " + rutaFront + ". Usando DefaultFront.");
+                    rutaFront = "Fronts/DefaultFront";
+                }
+                carta.BackSprite = new Sprite(rutaBack);
+                carta.FrontSprite = new Sprite(rutaFront);
+
             }
+
+
+
 
         } catch (IOException e) {
             System.out.println("Error al leer el json: " + e.getMessage());

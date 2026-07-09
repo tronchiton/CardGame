@@ -1,6 +1,6 @@
-package Cards;
+package BoardGame.Cards;
 
-import PlayerRelated.Player;
+import BoardGame.PlayerRelated.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
