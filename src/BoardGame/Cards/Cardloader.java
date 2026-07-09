@@ -35,7 +35,7 @@ public class Cardloader {
         }
 
 
-        try (FileReader reader = new FileReader("Data/BoardGame.Cards" + TYPE + ".json")) {
+        try (FileReader reader = new FileReader("Data/Cards" + TYPE + ".json")) {
 
             T[] cartasCargadas = (T[]) gson.fromJson(reader, claseArray);
 
