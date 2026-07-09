@@ -12,5 +12,96 @@
     "Description": "Un tío bastante normal",
     "Tags": [],
     "rarity": "Common"
+  },
+  {
+    "ID": "ForestAmbush",
+    "Title": "Emboscada en el Bosque",
+    "Description": "Un grupo de duendes asalta el sendero principal.",
+    "Tags": [],
+    "rarity": "Common"
+  },
+  {
+    "ID": "SlimeSwarm",
+    "Title": "Plaga de Slimes",
+    "Description": "Criaturas viscosas que bloquean el paso por las alcantarillas.",
+    "Tags": [],
+    "rarity": "Common"
+  },
+  {
+    "ID": "SpiderDen",
+    "Title": "Nido de Arañas",
+    "Description": "Una telaraña gigante cubre el techo. Algo se mueve rápido.",
+    "Tags": [],
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "GraveyardShift",
+    "Title": "Guardia en el Cementerio",
+    "Description": "Los muertos no descansan en paz esta noche.",
+    "Tags": [],
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "BanditCamp",
+    "Title": "Campamento de Bandidos",
+    "Description": "El líder de los forajidos custodia el cofre del tesoro.",
+    "Tags": [],
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "DesertMirage",
+    "Title": "Espejismo en el Desierto",
+    "Description": "Un espíritu de arena emerge para proteger el oasis.",
+    "Tags": [],
+    "rarity": "Rare"
+  },
+  {
+    "ID": "SunkenShip",
+    "Title": "Barco Hundido",
+    "Description": "Un capitán fantasma defiende los restos de su navío.",
+    "Tags": [],
+    "rarity": "Rare"
+  },
+  {
+    "ID": "GolemTrial",
+    "Title": "La Prueba del Golem",
+    "Description": "Una mole de piedra ancestral se activa al tocar el altar.",
+    "Tags": [],
+    "rarity": "Rare"
+  },
+  {
+    "ID": "VolcanoForge",
+    "Title": "Forja de Lava",
+    "Description": "Un elemental de fuego bloquea el acceso a las armas místicas.",
+    "Tags": [],
+    "rarity": "Epic"
+  },
+  {
+    "ID": "DragonLair",
+    "Title": "Guarida del Dragón",
+    "Description": "El suelo tiembla bajo las garras de la bestia alada.",
+    "Tags": [],
+    "rarity": "Epic"
+  },
+  {
+    "ID": "WizardTower",
+    "Title": "Torre del Archimago",
+    "Description": "Hechizos inestables cobran vida propia para defender la biblioteca.",
+    "Tags": [],
+    "rarity": "Epic"
+  },
+  {
+    "ID": "LichTomb",
+    "Title": "Cripta del Rey Lich",
+    "Description": "Un señor de la muerte alza su ejército maldito.",
+    "Tags": [],
+    "rarity": "Legendary"
+  },
+  {
+    "ID": "VoidRift",
+    "Title": "Falla del Vacío",
+    "Description": "Una anomalía del espacio-tiempo amenaza con tragarse el mundo.",
+    "Tags": [],
+    "rarity": "Legendary"
   }
 ]

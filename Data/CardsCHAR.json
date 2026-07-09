@@ -20,5 +20,148 @@
     "ATKDice": 1,
     "DFSDice": 1,
     "rarity": "Common"
+  },
+  {
+    "ID": "OrcScout",
+    "Title": "Explorador Orco",
+    "Description": "Fuerte y agresivo, pero descuida su defensa.",
+    "Tags": [],
+    "BaseATK": 10,
+    "BaseDFS": 4,
+    "ATKDice": 2,
+    "DFSDice": 0,
+    "rarity": "Common"
+  },
+  {
+    "ID": "SkeletonWarrior",
+    "Title": "Guerrero Esqueleto",
+    "Description": "Huesos reanimados que atacan sin miedo.",
+    "Tags": [],
+    "BaseATK": 6,
+    "BaseDFS": 6,
+    "ATKDice": 1,
+    "DFSDice": 1,
+    "rarity": "Common"
+  },
+  {
+    "ID": "ElfArcher",
+    "Title": "Arquera Elfa",
+    "Description": "Gran precisión a larga distancia.",
+    "Tags": [],
+    "BaseATK": 12,
+    "BaseDFS": 5,
+    "ATKDice": 2,
+    "DFSDice": 1,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "DwarfShield",
+    "Title": "Rompemuros Enano",
+    "Description": "Una defensa impenetrable capaz de aguantar cualquier golpe.",
+    "Tags": [],
+    "BaseATK": 5,
+    "BaseDFS": 14,
+    "ATKDice": 1,
+    "DFSDice": 3,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "DarkMage",
+    "Title": "Mago Oscuro",
+    "Description": "Canaliza energía arcana destructiva.",
+    "Tags": [],
+    "BaseATK": 15,
+    "BaseDFS": 4,
+    "ATKDice": 3,
+    "DFSDice": 0,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "FireElemental",
+    "Title": "Elemental de Fuego",
+    "Description": "Quema todo lo que toca. Puro ataque destructivo.",
+    "Tags": [],
+    "BaseATK": 16,
+    "BaseDFS": 6,
+    "ATKDice": 3,
+    "DFSDice": 1,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "StoneGolem",
+    "Title": "Golem de Piedra",
+    "Description": "Un coloso lento pero masivo y resistente.",
+    "Tags": [],
+    "BaseATK": 8,
+    "BaseDFS": 18,
+    "ATKDice": 1,
+    "DFSDice": 4,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "Assassin",
+    "Title": "Asesino de las Sombras",
+    "Description": "Ataques críticos letales si no lo detectas a tiempo.",
+    "Tags": [],
+    "BaseATK": 18,
+    "BaseDFS": 5,
+    "ATKDice": 4,
+    "DFSDice": 1,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "Paladin",
+    "Title": "Paladín de la Luz",
+    "Description": "Equilibrio perfecto entre ataque sagrado y defensa pesada.",
+    "Tags": [],
+    "BaseATK": 14,
+    "BaseDFS": 14,
+    "ATKDice": 2,
+    "DFSDice": 3,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "Necromancer",
+    "Title": "Nigromante",
+    "Description": "Controla las fuerzas de la vida y de la muerte.",
+    "Tags": [],
+    "BaseATK": 20,
+    "BaseDFS": 8,
+    "ATKDice": 3,
+    "DFSDice": 2,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "VampireLord",
+    "Title": "Señor Vampiro",
+    "Description": "Drena las fuerzas de sus enemigos para regenerarse.",
+    "Tags": [],
+    "BaseATK": 22,
+    "BaseDFS": 12,
+    "ATKDice": 4,
+    "DFSDice": 2,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "AncientDragon",
+    "Title": "Dragón Anciano",
+    "Description": "El soberano absoluto de los cielos y el fuego.",
+    "Tags": [],
+    "BaseATK": 30,
+    "BaseDFS": 25,
+    "ATKDice": 5,
+    "DFSDice": 4,
+    "rarity": "Legendary"
+  },
+  {
+    "ID": "LichKing",
+    "Title": "Rey Exánime",
+    "Description": "Su sola presencia congela el alma de los mortales.",
+    "Tags": [],
+    "BaseATK": 28,
+    "BaseDFS": 28,
+    "ATKDice": 4,
+    "DFSDice": 5,
+    "rarity": "Legendary"
   }
 ]

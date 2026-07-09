@@ -16,5 +16,122 @@
     "BonusATK": 2,
     "BonusDFS": 15,
     "rarity": "Legendary"
+  },
+  {
+    "ID": "WoodenShield",
+    "Title": "Escudo de Madera",
+    "Description": "Protección básica contra impactos leves.",
+    "Tags": [],
+    "BonusATK": 0,
+    "BonusDFS": 4,
+    "rarity": "Common"
+  },
+  {
+    "ID": "LeatherBoots",
+    "Title": "Botas de Cuero",
+    "Description": "Aumentan la agilidad para esquivar golpes.",
+    "Tags": [],
+    "BonusATK": 1,
+    "BonusDFS": 3,
+    "rarity": "Common"
+  },
+  {
+    "ID": "SteelDagger",
+    "Title": "Daga de Acero",
+    "Description": "Fácil de ocultar, ideal para ataques rápidos.",
+    "Tags": [],
+    "BonusATK": 4,
+    "BonusDFS": 1,
+    "rarity": "Common"
+  },
+  {
+    "ID": "HeavyAxe",
+    "Title": "Hacha Pesada",
+    "Description": "Inflige un gran daño a costa de tu defensa.",
+    "Tags": [],
+    "BonusATK": 8,
+    "BonusDFS": -2,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "KnightMail",
+    "Title": "Cota de Caballero",
+    "Description": "Armadura de metal entrelazado muy resistente.",
+    "Tags": [],
+    "BonusATK": 0,
+    "BonusDFS": 8,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "WizardStaff",
+    "Title": "Bastón de Hechicero",
+    "Description": "Canaliza energía mística para potenciar tus hechizos.",
+    "Tags": [],
+    "BonusATK": 7,
+    "BonusDFS": 2,
+    "rarity": "Uncommon"
+  },
+  {
+    "ID": "SharpSpear",
+    "Title": "Lanza Afilada",
+    "Description": "Mantiene a los enemigos a una distancia segura.",
+    "Tags": [],
+    "BonusATK": 6,
+    "BonusDFS": 4,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "RangerBow",
+    "Title": "Arco de Explorador",
+    "Description": "Madera flexible que duplica la fuerza del disparo.",
+    "Tags": [],
+    "BonusATK": 9,
+    "BonusDFS": 1,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "SpikedRing",
+    "Title": "Anillo de Púas",
+    "Description": "Añade daño adicional a todos tus ataques cuerpo a cuerpo.",
+    "Tags": [],
+    "BonusATK": 5,
+    "BonusDFS": 3,
+    "rarity": "Rare"
+  },
+  {
+    "ID": "DragonBlade",
+    "Title": "Espada de Dragón",
+    "Description": "Forjada con una escama incandescente de dragón real.",
+    "Tags": [],
+    "BonusATK": 14,
+    "BonusDFS": 2,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "TitanGauntlets",
+    "Title": "Guanteletes de Titán",
+    "Description": "Otorgan una fuerza descomunal y detienen cualquier espada.",
+    "Tags": [],
+    "BonusATK": 8,
+    "BonusDFS": 9,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "AmuletLife",
+    "Title": "Amuleto de la Vida",
+    "Description": "Rodea al portador de un aura mística protectora.",
+    "Tags": [],
+    "BonusATK": 4,
+    "BonusDFS": 12,
+    "rarity": "Epic"
+  },
+  {
+    "ID": "ShadowCloak",
+    "Title": "Capa de las Sombras",
+    "Description": "Te vuelve casi invisible, otorgando el máximo ataque y defensa.",
+    "Tags": [],
+    "BonusATK": 12,
+    "BonusDFS": 12,
+    "rarity": "Legendary"
   }
 ]
