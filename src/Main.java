@@ -1,6 +1,12 @@
 
+import Cards.BATTLE;
+import Cards.CHAR;
+import Cards.Cardloader;
+import Cards.OBJ;
 import Visual.Interfaz;
 
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Main {
@@ -10,11 +16,22 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        ArrayList<CHAR> personajes= Cardloader.load("CHAR");
+        Collections.shuffle(personajes);
+
+        ArrayList<OBJ> objetos=Cardloader.load("OBJ");
+        Collections.shuffle(objetos);
+
+        ArrayList<BATTLE> batallas=Cardloader.load("BATTLE");
+        Collections.shuffle(batallas);
+
+
         Interfaz.add(Pantalla);
         Interfaz.setVisible(true);
 
 
-        System.out.println("Hello world!");
+
 
 
 

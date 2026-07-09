@@ -17,6 +17,6 @@ public abstract class Card {
     String Title;
     String Description;
 
-    Sprite BackSprite;
-    Sprite DecorationSprite;
+    transient Sprite BackSprite;
+    transient Sprite DecorationSprite;
 }

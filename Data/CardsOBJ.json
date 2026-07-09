@@ -1,20 +1,20 @@
 [
   {
     "ID": "IronSword",
-    "title": "Espada de Hierro",
-    "description": "Una espada ligera pero afilada.",
-    "tags": [],
-    "bonusATK": 5,
-    "bonusDFS": 0,
+    "Title": "Espada de Hierro",
+    "Description": "Una espada ligera pero afilada.",
+    "Tags": [],
+    "BonusATK": 5,
+    "BonusDFS": 0,
     "rarity": "Common"
   },
   {
     "ID": "ShieldLegend",
-    "title": "Escudo de Leyenda",
-    "description": "Un escudo portado por héroes del pasado.",
-    "tags": [],
-    "bonusATK": 2,
-    "bonusDFS": 15,
+    "Title": "Escudo de Leyenda",
+    "Description": "Un escudo portado por héroes del pasado.",
+    "Tags": [],
+    "BonusATK": 2,
+    "BonusDFS": 15,
     "rarity": "Legendary"
   }
 ]

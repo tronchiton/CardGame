@@ -1,7 +1,16 @@
 package Cards;
 
-public class BATTLE {
+public class BATTLE extends Card{
 
 
-
+    @Override
+    public String toString() {
+        return "BATTLE{" +
+                "ID='" + ID + '\'' +
+                ", Title='" + Title + '\'' +
+                ", Description='" + Description + '\'' +
+                ", rarity=" + rarity +
+                ", Tags=" + Tags +
+                '}';
+    }
 }
