@@ -11,11 +11,16 @@ public class CHAR extends Card{
 
 
     public CHAR(String id, String title, int atk, int dfs) {
+        super(0, 0, 0, 0);
         this.ID = id;
         this.Title = title;
         this.BaseATK = atk;
         this.BaseDFS = dfs;
         this.rarity = Rarity.Common;
+    }
+
+    public CHAR(double x, double y, int sizex, int sizey) {
+        super(x, y, sizex, sizey);
     }
 
     public void equip(Player player){
@@ -30,7 +35,7 @@ public class CHAR extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", BoardGame.Tags=" + Tags +
+                ", Tags=" + Tags +
                 ", BaseATK=" + BaseATK +
                 ", BaseDFS=" + BaseDFS +
                 ", ATKDice=" + ATKDice +

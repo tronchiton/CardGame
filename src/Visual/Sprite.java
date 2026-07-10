@@ -12,7 +12,7 @@ public class Sprite {
 
     public Sprite(String nombre) {
         try {
-            this.imagen = ImageIO.read(new File("Assets/" + nombre));
+            this.imagen = ImageIO.read(new File( nombre));
         } catch (IOException e) {
             System.out.println("Error al cargar la imagen: " + e.getMessage());
             e.printStackTrace();

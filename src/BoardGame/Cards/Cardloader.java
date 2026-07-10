@@ -47,20 +47,20 @@ public class Cardloader {
 
                 System.out.println("Carta cargada en ArrayList: " + carta.toString());
 
-                String rutaBack = "Backs/" + TYPE + "Back";
-                String rutaFront = "Fronts/" + TYPE + "Front";
+                String rutaBack = "Assets/Backs/" + TYPE + "Back.png";
+                String rutaFront = "Assets/Fronts/" + TYPE + "Front.png";
 
                 File archivoBack = new File(rutaBack);
                 File archivoFront = new File(rutaFront);
 
                 if (!archivoBack.exists()) {
                     System.out.println("No se encontró el archivo: " + rutaBack + ". Usando DefaultBack.");
-                    rutaBack = "Backs/DefaultBack";
+                    rutaBack = "Assets/Backs/default.png";
                 }
 
                 if (!archivoFront.exists()) {
                     System.out.println("No se encontró el archivo: " + rutaFront + ". Usando DefaultFront.");
-                    rutaFront = "Fronts/DefaultFront";
+                    rutaFront = "Assets/Fronts/default.png";
                 }
                 carta.BackSprite = new Sprite(rutaBack);
                 carta.FrontSprite = new Sprite(rutaFront);

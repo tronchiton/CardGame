@@ -7,6 +7,10 @@ public class OBJ extends Card{
    int BonusATK;
    int BonusDFS;
 
+   public OBJ(double x, double y, int sizex, int sizey) {
+      super(x, y, sizex, sizey);
+   }
+
 
    @Override
    public String toString() {
@@ -15,7 +19,7 @@ public class OBJ extends Card{
                  ", Title='" + Title + '\'' +
                  ", Description='" + Description + '\'' +
                  ", rarity=" + rarity +
-                 ", BoardGame.Tags=" + Tags +
+                 ", Tags=" + Tags +
                  ", BonusATK=" + BonusATK +
                  ", BonusDFS=" + BonusDFS +
                  '}';

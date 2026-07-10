@@ -3,6 +3,10 @@ package BoardGame.Cards;
 public class BATTLE extends Card{
 
 
+    public BATTLE(double x, double y, int sizex, int sizey) {
+        super(x, y, sizex, sizey);
+    }
+
     @Override
     public String toString() {
         return "BATTLE{" +
@@ -10,7 +14,7 @@ public class BATTLE extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", BoardGame.Tags=" + Tags +
+                ", Tags=" + Tags +
                 '}';
     }
 }
