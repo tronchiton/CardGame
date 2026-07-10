@@ -13,11 +13,11 @@ public class Entity {
     Vector2D speed;
     Vector2D acceleration;
     Point2D position;
-    int sizex;
-    int sizey;
+    public int sizex;
+    public int sizey;
     Double angulara;
     Double anguralspeed;
-    Double angle;
+    public Double angle;
 
 
     public Entity(double x, double y, int sizex, int sizey) {
@@ -37,6 +37,12 @@ public class Entity {
     }
     public void setY(double y){
         this.position=new Point2D(this.position.getX(),y);
+    }
+    public void setsizeX(int x){
+        this.sizex=x;
+    }
+    public void setsizeY(int y){
+        this.sizey=y;
     }
 
     public double getX() {

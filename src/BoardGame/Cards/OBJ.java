@@ -8,7 +8,7 @@ public class OBJ extends Card{
    int BonusDFS;
 
    public OBJ(double x, double y, int sizex, int sizey) {
-      super(x, y, sizex, sizey);
+      super(x, y, 95, 130);
    }
 
 

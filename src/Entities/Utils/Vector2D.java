@@ -27,6 +27,7 @@ public class Vector2D {
         return Math.hypot(A.i,A.j);
     }
     public static Vector2D MultiplicarVector2DePorescalar(double A, Vector2D B){
+        if (B==null){return null;}
         return new Vector2D(A*B.i,A*B.j);
     }
     public static Vector2D DividirVector2DPorescalar (Vector2D A, double B){

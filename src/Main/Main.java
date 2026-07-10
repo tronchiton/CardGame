@@ -26,6 +26,13 @@ public class Main {
         Collections.shuffle(personajes);
         Pile Personajes=new Pile(personajes);
 
+        CHAR test=personajes.get(0);
+
+        System.out.println(test.toString());
+
+        test.setPosition(1000,800);
+
+
         ArrayList<OBJ> objetos=Cardloader.load("OBJ");
         Collections.shuffle(objetos);
         Pile Objetos=new Pile(objetos);

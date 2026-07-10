@@ -4,7 +4,7 @@ public class BATTLE extends Card{
 
 
     public BATTLE(double x, double y, int sizex, int sizey) {
-        super(x, y, sizex, sizey);
+        super(x, y, 95, 130);
     }
 
     @Override

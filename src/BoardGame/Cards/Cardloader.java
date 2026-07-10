@@ -1,5 +1,6 @@
 package BoardGame.Cards;
 
+import Main.Main;
 import Visual.Sprite;
 import com.google.gson.Gson;
 
@@ -44,8 +45,15 @@ public class Cardloader {
             }
 
             for (T carta : listaCartas) {
+            carta.setPosition(-5000,-5000);
+            carta.setsizeX(95);
+            carta.setsizeY(130);
+            carta.setacceleration(0,0);
+            carta.setSpeed(0,0);
+            carta.setAngularSpeed(0);
+            carta.setAngularAcceleration(0);
+                Main.Entities.add(carta);
 
-                System.out.println("Carta cargada en ArrayList: " + carta.toString());
 
                 String rutaBack = "Assets/Backs/" + TYPE + "Back.png";
                 String rutaFront = "Assets/Fronts/" + TYPE + "Front.png";

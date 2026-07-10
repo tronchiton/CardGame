@@ -11,7 +11,7 @@ public class CHAR extends Card{
 
 
     public CHAR(String id, String title, int atk, int dfs) {
-        super(0, 0, 0, 0);
+        super(0, 0, 95, 130);
         this.ID = id;
         this.Title = title;
         this.BaseATK = atk;
@@ -19,9 +19,6 @@ public class CHAR extends Card{
         this.rarity = Rarity.Common;
     }
 
-    public CHAR(double x, double y, int sizex, int sizey) {
-        super(x, y, sizex, sizey);
-    }
 
     public void equip(Player player){
         player.race=this;
