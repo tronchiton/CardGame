@@ -52,6 +52,7 @@ public class Cardloader {
             carta.setSpeed(0,0);
             carta.setAngularSpeed(0);
             carta.setAngularAcceleration(0);
+            carta.angle= (double) 0;
                 Main.Entities.add(carta);
 
 
@@ -62,12 +63,12 @@ public class Cardloader {
                 File archivoFront = new File(rutaFront);
 
                 if (!archivoBack.exists()) {
-                    System.out.println("No se encontró el archivo: " + rutaBack + ". Usando DefaultBack.");
+                    System.out.println("No se encontró el archivo: " + carta.ID +"  "+ rutaBack + ". Usando DefaultBack.");
                     rutaBack = "Assets/Backs/default.png";
                 }
 
                 if (!archivoFront.exists()) {
-                    System.out.println("No se encontró el archivo: " + rutaFront + ". Usando DefaultFront.");
+                    System.out.println("No se encontró el archivo: "+ carta.ID + rutaFront + ". Usando DefaultFront.");
                     rutaFront = "Assets/Fronts/default.png";
                 }
                 carta.BackSprite = new Sprite(rutaBack);

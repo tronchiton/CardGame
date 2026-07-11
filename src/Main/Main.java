@@ -12,7 +12,7 @@ import java.util.Collections;
 
 public class Main {
     static long tiempoAnterior = System.nanoTime();
-
+    public static  int scale=3;
     static Interfaz Interfaz= new Interfaz();
     static Interfaz.Pantalla Pantalla=new Interfaz.Pantalla();
     public static ArrayList<Entity> Entities = new ArrayList<>();

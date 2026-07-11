@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
+import static Main.Main.scale;
+
 public abstract class Card extends Entity {
     public ArrayList<Tag> Tags= new ArrayList<>();
 
@@ -39,14 +41,22 @@ public abstract class Card extends Entity {
          g2D.setColor(Color.BLUE);
          Point2D newpos = Main.Camara.RespectoCamara(this);
 
-         double centroX = newpos.getX() + (this.sizex / 2.0);
-         double centroY = newpos.getY() + (this.sizey / 2.0);
 
-         this.angle= (double) 0;
+         g2D.rotate(angle, this.getX(), this.getY());
 
-         g2D.rotate(angle, centroX, centroY);
+         g2D.drawImage(FrontSprite.get(),(int)newpos.getX(),(int) newpos.getY(),this.sizex*scale,this.sizey*scale,null);
 
-         g2D.drawImage(FrontSprite.get(),(int)newpos.getX(),(int) newpos.getY(),null);
+         //texto Title
+
+         g2D.setColor(Color.WHITE);
+         Font font=new Font("Arial", Font.BOLD, 14*scale);
+         FontMetrics metrics = g2D.getFontMetrics(font);
+         int largoPixeles = metrics.stringWidth(this.Title);
+         int scaled=largoPixeles/this.sizex;
+
+         g2D.setFont(font);
+
+         g2D.drawString(this.Title, (int)newpos.getX(), (int)newpos.getY());
 
          g2D.setTransform(oldTransform);
 
