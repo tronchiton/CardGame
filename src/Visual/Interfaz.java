@@ -5,6 +5,9 @@ import Entities.Entity;
 import Main.Main;
 import  javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Interfaz extends JFrame {
 
@@ -29,6 +32,18 @@ public class Interfaz extends JFrame {
             Color Cielo = new Color(225, 220, 220);
             this.setBackground(Cielo);
             this.setBounds(0,0,1920,1080);
+
+            MouseAdapter mouse= new MouseAdapter() {
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    System.out.println("¡Botón presionado!");
+                }
+            };
+
+
+
+
         }
 
         @Override
