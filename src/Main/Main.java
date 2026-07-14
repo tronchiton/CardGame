@@ -6,10 +6,12 @@ import Entities.Camera;
 import Entities.Entity;
 import Visual.Interfaz;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import  BoardGame.TurnCycle.TurnCycle;
 
+import static BoardGame.TurnCycle.TurnCycle.roundIndex;
+import static BoardGame.TurnCycle.TurnCycle.turnIndex;
 
 public class Main {
     static long tiempoAnterior = System.nanoTime();
@@ -19,11 +21,19 @@ public class Main {
 
     public static ArrayList<Entity> Entities = new ArrayList<>();
     public static ArrayList<Player> Players= new ArrayList<>();
+    public static Player activePlayer;
 
     public static Camera Camara=new Camera(960,540);
 
 
     public static void main(String[] args) {
+
+        roundIndex=0;
+        turnIndex=0;
+        TurnCycle turnCycle = new TurnCycle();
+        turnCycle.startFirstTurn();
+
+
         ArrayList<CHAR> personajes= Cardloader.load("CHAR");
         Collections.shuffle(personajes);
         Pile Personajes=new Pile(personajes);
