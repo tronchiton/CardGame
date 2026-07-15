@@ -14,6 +14,7 @@ import static Main.Main.scale;
 
 public abstract class Card extends Entity {
     public ArrayList<Tag> Tags= new ArrayList<>();
+    public String [] NameTags;
 
     public Card(double x, double y, int sizex, int sizey) {
         super(x, y, 95, 130);

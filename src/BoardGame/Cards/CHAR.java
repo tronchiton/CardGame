@@ -2,6 +2,8 @@ package BoardGame.Cards;
 
 import BoardGame.PlayerRelated.Player;
 
+import java.util.Arrays;
+
 public class CHAR extends Card{
 
     public int BaseATK;
@@ -32,7 +34,7 @@ public class CHAR extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", Tags=" + Tags +
+                ", Tags=" + Arrays.toString(this.NameTags) +
                 ", BaseATK=" + BaseATK +
                 ", BaseDFS=" + BaseDFS +
                 ", ATKDice=" + ATKDice +

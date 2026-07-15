@@ -1,5 +1,7 @@
 package BoardGame.Cards;
 
+import java.util.Arrays;
+
 public class BATTLE extends Card{
 
 
@@ -14,7 +16,7 @@ public class BATTLE extends Card{
                 ", Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", rarity=" + rarity +
-                ", Tags=" + Tags +
+                ", Tags=" + Arrays.toString(this.NameTags) +
                 '}';
     }
 }

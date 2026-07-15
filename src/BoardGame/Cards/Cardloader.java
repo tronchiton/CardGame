@@ -1,5 +1,6 @@
 package BoardGame.Cards;
 
+import BoardGame.Tags.Tag;
 import Main.Main;
 import Visual.Sprite;
 import com.google.gson.Gson;
@@ -45,6 +46,14 @@ public class Cardloader {
             }
 
             for (T carta : listaCartas) {
+                carta.Tags=new ArrayList<>();
+
+                for (String tag : carta.NameTags){
+                    carta.Tags.add(new Tag(tag));
+                }
+
+
+
             carta.setPosition(-5000,-5000);
             carta.setsizeX(95);
             carta.setsizeY(130);
@@ -55,13 +64,18 @@ public class Cardloader {
             carta.angle= (double) 0;
                 Main.Entities.add(carta);
 
-
+                String rutaDecorate="Assets/Backs/" + carta.ID + ".png";;
                 String rutaBack = "Assets/Backs/" + TYPE + "Back.png";
                 String rutaFront = "Assets/Fronts/" + TYPE + "Front.png";
 
+                File archivoDecorate = new File(rutaDecorate);
                 File archivoBack = new File(rutaBack);
                 File archivoFront = new File(rutaFront);
 
+                if (!archivoDecorate.exists()) {
+                    System.out.println("No se encontró el archivo: " + carta.ID +"  "+ rutaDecorate + ". Usando Default.");
+                    rutaBack = "Assets/Decoration/default.png";
+                }
                 if (!archivoBack.exists()) {
                     System.out.println("No se encontró el archivo: " + carta.ID +"  "+ rutaBack + ". Usando DefaultBack.");
                     rutaBack = "Assets/Backs/default.png";
@@ -71,6 +85,8 @@ public class Cardloader {
                     System.out.println("No se encontró el archivo: "+ carta.ID + rutaFront + ". Usando DefaultFront.");
                     rutaFront = "Assets/Fronts/default.png";
                 }
+
+                carta.DecorationSprite = new Sprite(rutaDecorate);
                 carta.BackSprite = new Sprite(rutaBack);
                 carta.FrontSprite = new Sprite(rutaFront);
 

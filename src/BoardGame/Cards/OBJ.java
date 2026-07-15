@@ -1,6 +1,8 @@
 package BoardGame.Cards;
 
 
+import java.util.Arrays;
+
 public class OBJ extends Card{
 
 
@@ -19,7 +21,7 @@ public class OBJ extends Card{
                  ", Title='" + Title + '\'' +
                  ", Description='" + Description + '\'' +
                  ", rarity=" + rarity +
-                 ", Tags=" + Tags +
+                 ", Tags=" + Arrays.toString(this.NameTags) +
                  ", BonusATK=" + BonusATK +
                  ", BonusDFS=" + BonusDFS +
                  '}';
