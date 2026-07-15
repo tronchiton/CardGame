@@ -1,6 +1,7 @@
 package BoardGame.PlayerRelated;
 import BoardGame.Cards.CHAR;
 import BoardGame.Cards.Card;
+import BoardGame.Cards.OBJ;
 import Main.Main;
 
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 
 public class Player {
     public ArrayList<Card> Hand= new ArrayList<>();
-    public ArrayList<Card> Active= new ArrayList<>();
+    public ArrayList<OBJ> Active= new ArrayList<>();
     public  boolean HisTurn;
     public int index;
 
@@ -18,6 +19,7 @@ public class Player {
 
     public int life;
     public int DFS;
+    public int ATK;
     public int ATKDice;
     public int DFSDice;
 
@@ -37,6 +39,21 @@ public class Player {
         this.race= personajes.remove(0);
         Main.Players.add(this);
 
+    }
+
+    public void calculateStats(){
+        int atk=0;
+        int dfs=0;
+        for (OBJ card : this.Active){
+            atk+=card.BonusATK;
+            dfs+=card.BonusDFS;
+        }
+
+
+        this.DFS=this.race.BaseDFS+dfs;
+        this.ATK=this.race.BaseATK+atk;
+        this.DFSDice=this.race.DFSDice;
+        this.ATKDice=this.race.ATKDice;
     }
 
 }

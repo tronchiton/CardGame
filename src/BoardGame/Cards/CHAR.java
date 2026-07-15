@@ -4,10 +4,10 @@ import BoardGame.PlayerRelated.Player;
 
 public class CHAR extends Card{
 
-    int BaseATK;
-    int BaseDFS;
-    int ATKDice;
-    int DFSDice;
+    public int BaseATK;
+    public int BaseDFS;
+    public int ATKDice;
+    public int DFSDice;
 
 
     public CHAR(String id, String title, int atk, int dfs) {

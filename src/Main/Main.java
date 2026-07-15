@@ -36,7 +36,7 @@ public class Main {
 
         ArrayList<CHAR> personajes= Cardloader.load("CHAR");
         Collections.shuffle(personajes);
-        Pile Personajes=new Pile(personajes);
+        Pile PilePersonajes=new Pile(personajes);
 
 
         int players=4;
@@ -45,18 +45,18 @@ public class Main {
         }
 
 
-        CHAR test=personajes.get(0);
+        CHAR test= (CHAR) PilePersonajes.getCards().get(0);
         System.out.println(test.toString());
         test.setPosition(1000,800);
 
 
         ArrayList<OBJ> objetos=Cardloader.load("OBJ");
         Collections.shuffle(objetos);
-        Pile Objetos=new Pile(objetos);
+        Pile PileObjetos=new Pile(objetos);
 
         ArrayList<BATTLE> batallas=Cardloader.load("BATTLE");
         Collections.shuffle(batallas);
-        Pile Batallas=new Pile(batallas);
+        Pile PileBatallas=new Pile(batallas);
 
         Interfaz.add(Pantalla);
         Interfaz.setVisible(true);

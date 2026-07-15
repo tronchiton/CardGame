@@ -41,7 +41,8 @@ public class Interfaz extends JFrame {
                 }
             };
 
-
+            this.addMouseListener(mouse);
+            this.addMouseMotionListener(mouse);
 
 
         }

@@ -4,8 +4,8 @@ package BoardGame.Cards;
 public class OBJ extends Card{
 
 
-   int BonusATK;
-   int BonusDFS;
+  public int BonusATK;
+   public int BonusDFS;
 
    public OBJ(double x, double y, int sizex, int sizey) {
       super(x, y, 95, 130);
