@@ -64,7 +64,7 @@ public class Cardloader {
             carta.angle= (double) 0;
                 Main.Entities.add(carta);
 
-                String rutaDecorate="Assets/Backs/" + carta.ID + ".png";;
+                String rutaDecorate="Assets/Decoration/" + carta.ID + ".png";;
                 String rutaBack = "Assets/Backs/" + TYPE + "Back.png";
                 String rutaFront = "Assets/Fronts/" + TYPE + "Front.png";
 
@@ -74,7 +74,7 @@ public class Cardloader {
 
                 if (!archivoDecorate.exists()) {
                     System.out.println("No se encontró el archivo: " + carta.ID +"  "+ rutaDecorate + ". Usando Default.");
-                    rutaBack = "Assets/Decoration/default.png";
+                    rutaDecorate = "Assets/Decoration/default.png";
                 }
                 if (!archivoBack.exists()) {
                     System.out.println("No se encontró el archivo: " + carta.ID +"  "+ rutaBack + ". Usando DefaultBack.");
