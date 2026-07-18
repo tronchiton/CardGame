@@ -1,6 +1,7 @@
 package BoardGame.Cards;
 
 import BoardGame.Tags.Tag;
+import BoardGame.Write.Write;
 import Entities.Entity;
 import Entities.Utils.Point2D;
 import Main.Main;
@@ -50,7 +51,7 @@ public abstract class Card extends Entity {
          //texto Title
 
          g2D.setColor(Color.WHITE);
-         Font font=new Font("Arial", Font.BOLD, 14*scale);
+         Font font= Write.PixelatedFont;
          FontMetrics metrics = g2D.getFontMetrics(font);
          int largoPixeles = metrics.stringWidth(this.Title);
          int scaled=largoPixeles/this.sizex;
