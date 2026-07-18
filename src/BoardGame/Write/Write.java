@@ -45,8 +45,10 @@ public class Write {
         return fuenteBase.deriveFont(Font.PLAIN, size);
     }
 
-    public void write(Graphics2D g2D){
-
+    public static void write(Graphics2D g2D, String Text, String Font, Color Color, float size, int x, int y){
+        g2D.setColor(Color);
+        g2D.setFont(loadFont(Font,size));
+        g2D.drawString(Text,x,y);
     }
 
 

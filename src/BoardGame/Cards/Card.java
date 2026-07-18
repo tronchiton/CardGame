@@ -50,15 +50,8 @@ public abstract class Card extends Entity {
 
          //texto Title
 
-         g2D.setColor(Color.WHITE);
-         Font font= Write.PixelatedFont;
-         FontMetrics metrics = g2D.getFontMetrics(font);
-         int largoPixeles = metrics.stringWidth(this.Title);
-         int scaled=largoPixeles/this.sizex;
 
-         g2D.setFont(font);
-
-         g2D.drawString(this.Title, (int)newpos.getX(), (int)newpos.getY());
+         Write.write(g2D,"Test","Minecraftia-Regular",Color.BLACK,50,(int)newpos.getX(), (int)newpos.getY());
 
          g2D.setTransform(oldTransform);
 
