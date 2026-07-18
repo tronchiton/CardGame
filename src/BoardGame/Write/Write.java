@@ -8,6 +8,10 @@ import java.util.Map;
 
 public class Write {
 
+    public enum alignement{
+        center, left,right
+
+    }
 
     private static final Map<String, Font> FuentesCargadas = new HashMap<>();
 
@@ -51,7 +55,7 @@ public class Write {
         return fuenteBase.deriveFont(Font.PLAIN, size);
     }
 
-    public static void write(Graphics2D g2D, String Text, String Font, Color Color, float size, int x, int y){
+    public static void write(Graphics2D g2D, String Text, String Font, Color Color, float size, int x, int y, alignement align){
 
         Font Fonty= loadFont(Font,size);
         FontMetrics metrics = g2D.getFontMetrics();
@@ -59,7 +63,13 @@ public class Write {
 
         g2D.setColor(Color);
         g2D.setFont(Fonty);
-        g2D.drawString(Text,x,y+metric.getHeight());
+
+        if (align == alignement.center){
+        g2D.drawString(Text,x-metric.stringWidth(Text)/2,y+metric.getHeight());
+        }
+        if (align == alignement.right){
+            g2D.drawString(Text,x,y+metric.getHeight());
+        }
     }
 
 
