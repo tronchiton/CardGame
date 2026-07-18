@@ -4,7 +4,7 @@ package Entities;
 import Main.Main;
 import Entities.Utils.Point2D;
 import Entities.Utils.Vector2D;
-
+import java.util.Random;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
@@ -94,6 +94,16 @@ public class Entity {
 
 
     }
+
+    public void whoble(){
+        if (this.angle<Math.abs(3)){ this.angulara+=Random.from(new Random()).nextFloat((float) -1.2,(float)1.2);}
+        else{
+
+        }
+    }
+
+
+
     public void render(Graphics2D g2D) {
         AffineTransform oldTransform = g2D.getTransform();
 
