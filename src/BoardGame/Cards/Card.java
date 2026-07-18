@@ -51,7 +51,7 @@ public abstract class Card extends Entity {
          //texto Title
 
 
-         Write.write(g2D,"Test","Minecraftia-Regular",Color.BLACK,50,(int)newpos.getX(), (int)newpos.getY());
+         Write.write(g2D,"Test","Minecraftia-Regular",Color.BLACK,20,(int)newpos.getX(), (int)newpos.getY());
 
          g2D.setTransform(oldTransform);
 

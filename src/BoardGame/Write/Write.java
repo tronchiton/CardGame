@@ -11,10 +11,16 @@ public class Write {
 
     private static final Map<String, Font> FuentesCargadas = new HashMap<>();
 
-    public static Font PixelatedFont= loadFont("Minecraftia-regular",20);
 
 
     public static Font loadFont(String name, float size) {
+
+        switch ((name.toLowerCase())) {
+            case "pixel", "minecraft","p" -> name = "Minecraftia-Regular";
+        }
+
+
+
         Font fuenteBase = FuentesCargadas.get(name);
 
         if (fuenteBase == null) {
@@ -46,9 +52,14 @@ public class Write {
     }
 
     public static void write(Graphics2D g2D, String Text, String Font, Color Color, float size, int x, int y){
+
+        Font Fonty= loadFont(Font,size);
+        FontMetrics metrics = g2D.getFontMetrics();
+        FontMetrics metric = g2D.getFontMetrics(Fonty);
+
         g2D.setColor(Color);
-        g2D.setFont(loadFont(Font,size));
-        g2D.drawString(Text,x,y);
+        g2D.setFont(Fonty);
+        g2D.drawString(Text,x,y+metric.getHeight());
     }
 
 
