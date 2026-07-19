@@ -57,17 +57,18 @@ public abstract class Card extends Entity {
         g2D.setColor(Color.BLUE);
         Point2D newpos = Main.Camara.RespectoCamara(this);
 
-        // Centro real del rectángulo que se va a dibujar (incluye el scale)
-        double centroX = newpos.getX() + (this.sizex * scale) / 2.0;
-        double centroY = newpos.getY() + (this.sizey * scale) / 2.0;
 
-        g2D.rotate(angle, centroX, centroY);
+        double left = newpos.getX() - (this.sizex * scale) / 2.0;
+        double top  = newpos.getY() - (this.sizey * scale) / 2.0;
 
-        g2D.drawImage(FrontSprite.get(),(int)newpos.getX(),(int) newpos.getY(),this.sizex*scale,this.sizey*scale,null);
+        g2D.rotate(angle, newpos.getX(), newpos.getY());
+
+        g2D.drawImage(FrontSprite.get(),(int)left,(int)top,this.sizex*scale,this.sizey*scale,null);
 
         //texto Title
-        Write.write(g2D,Title,"Minecraftia-Regular", RarityToColor.get(this.rarity),14,(int)newpos.getX()+this.sizex/2*scale, (int)newpos.getY()+23, Write.alignement.center);
-        Write.write(g2D,Title,"Minecraftia-Regular", Color.BLACK,12,(int)newpos.getX()+this.sizex/2*scale, (int)newpos.getY()+70, Write.alignement.center);
+        Write.write(g2D,Title,"Minecraftia-Regular", RarityToColor.get(this.rarity),14,(int)newpos.getX(), (int)(top+23), Write.alignement.center);
+        Write.write(g2D,Description,"Minecraftia-Regular", Color.BLACK,12,(int)newpos.getX(), (int)(top+70), Write.alignement.center);
         g2D.setTransform(oldTransform);
     }
 }
+

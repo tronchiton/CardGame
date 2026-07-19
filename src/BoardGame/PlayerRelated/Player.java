@@ -35,11 +35,12 @@ public class Player {
         this.Hand.remove(card);
     }
 
-    public Player(int index, ArrayList<CHAR> personajes, Point Position){
+    public Player(int index, ArrayList<CHAR> personajes, Point2D Position){
         this.index=index;
         this.life=6;
         this.HisTurn=false;
         this.race= personajes.remove(0);
+        this.Position=Position;
         Main.Players.add(this);
 
     }

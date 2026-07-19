@@ -42,6 +42,7 @@ public class Main {
 
                 ser.mover(dt);
                 ser.whoble();
+                ser.act();
 
 
             }

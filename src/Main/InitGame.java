@@ -4,7 +4,9 @@ import BoardGame.Cards.*;
 import BoardGame.PlayerRelated.Player;
 import BoardGame.TurnCycle.TurnCycle;
 import Entities.Utils.Point2D;
+import Visual.GameUI;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +24,7 @@ public class InitGame {
         for (int a=1; a<=players; a++){
             new Player(a,
                     personajes,
-                    new Point(a*1920,a*1080)
+                    new Point2D((a-1)*1920,0)
             );
         }
 
@@ -48,5 +50,12 @@ public class InitGame {
         turnIndex = 0;
         TurnCycle turnCycle = new TurnCycle();
         turnCycle.startFirstTurn();
+
+
+        JButton Nexturn=new GameUI.NextTurn();
+        Main.Pantalla.add(Nexturn);
+        Nexturn.setBounds(1820, 0, 100, 100);
+
+
     }
 }

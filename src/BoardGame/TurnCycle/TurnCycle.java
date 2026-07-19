@@ -7,7 +7,7 @@ public  class TurnCycle {
     public static int roundIndex;
 
 
-    public void whoIsPlaying( int np){
+    public static void whoIsPlaying(int np){
         if (np == 0) {
             return;
         }
@@ -19,14 +19,14 @@ public  class TurnCycle {
          Main.Players.get(turnIndex).HisTurn=true;
         CurrentPlayerManager.activePlayer= Main.Players.get(turnIndex);
     }
-    public void restart(int np){
+    public static void restart(int np){
 
         if (turnIndex==np){
             turnIndex=0;
             roundIndex++;
         }
     }
-    public void nextTurn() {
+    public static void nextTurn() {
         int np=Main.Players.size();
         turnIndex++;
         restart(np);
