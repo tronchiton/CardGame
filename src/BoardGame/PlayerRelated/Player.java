@@ -2,13 +2,16 @@ package BoardGame.PlayerRelated;
 import BoardGame.Cards.CHAR;
 import BoardGame.Cards.Card;
 import BoardGame.Cards.OBJ;
+import Entities.Utils.Point2D;
 import Main.Main;
 
 
+import java.awt.*;
 import java.util.ArrayList;
 
 
 public class Player {
+   public Point2D Position;
     public ArrayList<Card> Hand= new ArrayList<>();
     public ArrayList<OBJ> Active= new ArrayList<>();
     public  boolean HisTurn;
@@ -32,7 +35,7 @@ public class Player {
         this.Hand.remove(card);
     }
 
-    public Player(int index, ArrayList<CHAR> personajes){
+    public Player(int index, ArrayList<CHAR> personajes, Point Position){
         this.index=index;
         this.life=6;
         this.HisTurn=false;

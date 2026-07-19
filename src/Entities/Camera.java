@@ -25,6 +25,7 @@ public class Camera extends Entity {
 
 
     public Point2D RespectoCamara(Entity ser){
+
         double newx=(int)ser.position.getX()-this.position.getX()+1920/2;
         double newy=(int)ser.position.getY()-this.position.getY()+1080/2;
         return new Point2D(newx,newy);

@@ -56,6 +56,9 @@ public class Entity {
     public void setPosition(double x, double y){
         this.position=new Point2D(x,y);
     }
+    public void setPosition(Point2D Point){
+        this.position=Point;
+    }
 
     public void setSpeedX(double x){
         this.speed=new Vector2D(x,this.speed.getJ());

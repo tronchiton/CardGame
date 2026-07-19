@@ -7,11 +7,7 @@ import Entities.Entity;
 import Visual.Interfaz;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import  BoardGame.TurnCycle.TurnCycle;
 
-import static BoardGame.TurnCycle.TurnCycle.roundIndex;
-import static BoardGame.TurnCycle.TurnCycle.turnIndex;
 
 public class Main {
     static long tiempoAnterior = System.nanoTime();
@@ -21,64 +17,35 @@ public class Main {
 
     public static ArrayList<Entity> Entities = new ArrayList<>();
     public static ArrayList<Player> Players= new ArrayList<>();
-    public static Player activePlayer;
 
-    public static Camera Camara=new Camera(960,540);
+    public static Pile Personajes;
+    public static Pile Batallas;
+    public static Pile Objetos;
+
+    public static Camera Camara=new Camera(1920, 1080);
 
 
     public static void main(String[] args) {
 
-        roundIndex=0;
-        turnIndex=0;
-        TurnCycle turnCycle = new TurnCycle();
-        turnCycle.startFirstTurn();
+        InitGame.start();
 
-
-        ArrayList<CHAR> personajes= Cardloader.load("CHAR");
-        Collections.shuffle(personajes);
-        Pile PilePersonajes=new Pile(personajes);
-
-
-        int players=4;
-        for (int a=1; a<=players; a++){
-            new Player(a, personajes);
-        }
-
-
-        CHAR test= (CHAR) PilePersonajes.getCards().get(0);
-        System.out.println(test.toString());
-        test.setPosition(1000,800);
-
-
-        ArrayList<OBJ> objetos=Cardloader.load("OBJ");
-        Collections.shuffle(objetos);
-        Pile PileObjetos=new Pile(objetos);
-
-        ArrayList<BATTLE> batallas=Cardloader.load("BATTLE");
-        Collections.shuffle(batallas);
-        Pile PileBatallas=new Pile(batallas);
 
         Interfaz.add(Pantalla);
         Interfaz.setVisible(true);
+
         new javax.swing.Timer(10, e -> {
             long tiempoActual = System.nanoTime();
             double dt = (tiempoActual - tiempoAnterior) / 1_000_000_000.0;
             tiempoAnterior = tiempoActual;
             if (dt > 0.05) {dt = 0.05;}
-
-
             for (Entity ser : Entities) {
 
                 ser.mover(dt);
                 ser.whoble();
 
+
             }
-            Pantalla.repaint();
-
-        }).start();
-
-
-
+            Pantalla.repaint();}).start();
 
 
     }
