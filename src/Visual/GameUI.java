@@ -7,7 +7,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameUI {
+static int Turnshow;
+static int Roundshow;
+public static Turn TurnLabel;
+public static Round RoundLabel;
 
+    public static void update(int TurnIndex, int RoundIndex){
+        if (TurnLabel ==null)return;
+        TurnLabel.updater(TurnIndex);
+        RoundLabel.updater(RoundIndex);
+    }
 
 
     public static class NextTurn extends JButton{
@@ -32,13 +41,26 @@ public class GameUI {
     public static class Turn extends JLabel {
 
         public Turn(){
-            this.setBounds(0, 0, 50, 10);
-            this.setFont(Write.loadFont("pixel",14));
+            this.setBounds(1700, 10, 150, 50);
+            this.setFont(Write.loadFont("pixel",20));
             this.setForeground(Color.BLACK);
-
+            this.setText("Player  1");
         }
-        public void update (int value){
-        this.setText("Turn:"+value);
+        public void updater(int value){
+        this.setText("Player  "+(value+1));
+        }
+
+    }
+    public static class Round extends JLabel {
+
+        public Round(){
+            this.setBounds(1700, 35, 150, 50);
+            this.setFont(Write.loadFont("pixel",20));
+            this.setForeground(Color.BLACK);
+            this.setText("Round 1");
+        }
+        public void updater(int value){
+            this.setText("Round "+(value+1));
         }
 
     }

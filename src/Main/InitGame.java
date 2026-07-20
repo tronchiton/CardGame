@@ -7,7 +7,6 @@ import Entities.Utils.Point2D;
 import Visual.GameUI;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -56,8 +55,13 @@ public class InitGame {
         Main.Pantalla.add(Nexturn);
 
 
-        JLabel Turn= new GameUI.Turn();
+        GameUI.Turn Turn= new GameUI.Turn();
         Main.Pantalla.add(Turn);
+        GameUI.TurnLabel =Turn;
+
+        GameUI.Round Round= new GameUI.Round();
+        Main.Pantalla.add(Round);
+        GameUI.RoundLabel=Round;
 
 
     }

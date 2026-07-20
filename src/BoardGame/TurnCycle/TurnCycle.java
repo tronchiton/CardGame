@@ -20,7 +20,7 @@ public  class TurnCycle {
 
          Main.Players.get(turnIndex).HisTurn=true;
         CurrentPlayerManager.activePlayer= Main.Players.get(turnIndex);
-
+        GameUI.update(turnIndex,roundIndex);
 
     }
     public static void restart(int np){

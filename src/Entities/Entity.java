@@ -8,6 +8,8 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
+import static BoardGame.Fight.Dice.random;
+
 
 public class Entity {
     Vector2D speed;
@@ -19,6 +21,17 @@ public class Entity {
     Double anguralspeed;
     public Double angle;
 
+    private double currentScale = 1.0;         // Escala actual
+    private double targetScale = 1.15;         // Escala base (un poco más grande que 1.0)
+    private double scaleSpeed = 0.0;           // Velocidad de cambio de tamaño
+    private double scaleAcceleration = 0.0;    // Aceleración del tamaño
+    private static final double SCALE_K = 150.0;   // Fuerza de retorno del muelle de tamaño
+    private static final double SCALE_DAMP = 8.0;  // Amortiguación de tamaño
+    private static final double SCALE_IMPULSE = 3.5; // Intensidad del temblor de tamaño
+
+    private static final double SPRING_K = 40.0;
+    private static final double DAMPING = 5.0;
+    private static final double IMPULSE_FORCE = 22.0;
 
     public Entity(double x, double y, int sizex, int sizey) {
         this.position = new Point2D(x, y);
@@ -99,10 +112,19 @@ public class Entity {
     }
 
     public void whoble(){
-        if (this.angle<Math.abs(3)){ this.angulara+=Random.from(new Random()).nextFloat((float) -1.2,(float)1.2);}
-        else{
+        // --- TEMBLOR DE ROTACIÓN ---
+        double springForce = -SPRING_K * this.angle;
+        double dampingForce = -DAMPING * this.anguralspeed;
+        double randomImpulse = (random.nextDouble() * 2.0 - 1.0) * IMPULSE_FORCE;
+        this.angulara = springForce + dampingForce + randomImpulse;
 
-        }
+        // --- TEMBLOR DE TAMAÑO (DENTRO DEL WOBBLE) ---
+        // El muelle intenta mantener la escala en targetScale (1.15)
+        double scaleSpringForce = -SCALE_K * (this.currentScale - this.targetScale);
+        double scaleDampingForce = -SCALE_DAMP * this.scaleSpeed;
+        // Pequeño impacto aleatorio que hace vibrar el tamaño independientemente
+        double scaleRandomImpulse = (random.nextDouble() * 2.0 - 1.0) * SCALE_IMPULSE;
+        this.scaleAcceleration = scaleSpringForce + scaleDampingForce + scaleRandomImpulse;
     }
 
 

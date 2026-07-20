@@ -3,7 +3,7 @@ package BoardGame.Fight;
 import java.util.Random;
 
 public class Dice {
-     static Random random = new Random();
+     public static Random random = new Random();
 
     public static int lanzarDado(int lados){
         if (lados < 1) {
