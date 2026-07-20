@@ -29,7 +29,6 @@ public class MainMenuUI extends JPanel {
 
         fondo = new ImageIcon("Assets/UI/MainMenu.png").getImage();
 
-        construirTitulo();
         construirSelectorJugadores();
         construirBotonJugar();
     }
@@ -43,13 +42,6 @@ public class MainMenuUI extends JPanel {
         g2D.drawImage(fondo, 0, 0, getWidth(), getHeight(), this);
     }
 
-    private void construirTitulo() {
-        JLabel titulo = new JLabel("PELEA DE CASTILLOS", SwingConstants.CENTER);
-        titulo.setFont(Write.loadFont("pixel", 60));
-        titulo.setForeground(Color.WHITE);
-        titulo.setBounds(0, 200, 1920, 90);
-        this.add(titulo);
-    }
 
     private void construirSelectorJugadores() {
         JLabel etiqueta = new JLabel("JUGADORES", SwingConstants.CENTER);
