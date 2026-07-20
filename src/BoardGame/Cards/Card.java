@@ -69,7 +69,7 @@ if (this.Up) {
     //texto Title
     Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
 
-    Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 12, this, 30, 5);
+    Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 14, this, 30, 5);
 }
 else{
     g2D.drawImage(BackSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);

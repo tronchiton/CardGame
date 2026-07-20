@@ -56,7 +56,6 @@ public class Main {
             for (Entity ser : Entities) {
 
                 ser.mover(dt);
-                ser.whoble();
                 ser.act();
 
 

@@ -18,7 +18,7 @@ public class Interfaz extends JFrame {
 
         this.setLayout(null);
         this.setSize(1920,1080);
-        this.setTitle("Super Slime Jump");
+        this.setTitle("Pelea De Castillos");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.black);
         this.setUndecorated(true);

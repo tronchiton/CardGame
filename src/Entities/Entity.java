@@ -133,7 +133,7 @@ public class Entity {
         AffineTransform oldTransform = g2D.getTransform();
 
         g2D.setColor(Color.BLUE);
-        Point2D newpos = Main.Camara.RespectoCamara(this); // newpos ahora ES el centro
+        Point2D newpos = Main.Camara.RespectoCamara(this);
 
         g2D.rotate(angle, newpos.getX(), newpos.getY());
 
