@@ -54,6 +54,7 @@ public class Interfaz extends JFrame {
             super.paintComponent(g);
             Graphics2D g2D = (Graphics2D) g;
             g2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+
             for (Entity ser : Main.Entities) {
                 ser.render(g2D);
 
