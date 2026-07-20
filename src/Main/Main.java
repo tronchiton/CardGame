@@ -5,6 +5,7 @@ import BoardGame.PlayerRelated.Player;
 import Entities.Camera;
 import Entities.Entity;
 import Visual.Interfaz;
+import Visual.MainMenuUI;
 
 import java.util.ArrayList;
 
@@ -27,11 +28,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        InitGame.start();
+        Interfaz.add(new MainMenuUI());
+        Interfaz.setVisible(true);
 
+    }
+
+    /**
+     * Llamado desde el boton "JUGAR" del menu principal.
+     * Quita el menu de la ventana, inicializa la partida con la cantidad de
+     * jugadores elegida y arranca el loop del juego.
+     */
+    public static void startGame(int numeroJugadores) {
+
+        Interfaz.getContentPane().removeAll();
+
+        InitGame.start(numeroJugadores);
 
         Interfaz.add(Pantalla);
-        Interfaz.setVisible(true);
+        Interfaz.revalidate();
+        Interfaz.repaint();
 
         new javax.swing.Timer(10, e -> {
             long tiempoActual = System.nanoTime();
@@ -47,7 +62,6 @@ public class Main {
 
             }
             Pantalla.repaint();}).start();
-
 
     }
 }

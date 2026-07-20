@@ -14,12 +14,11 @@ import static BoardGame.TurnCycle.TurnCycle.roundIndex;
 import static BoardGame.TurnCycle.TurnCycle.turnIndex;
 
 public class InitGame {
-    public static void start(){
+    public static void start(int players){
         ArrayList<CHAR> personajes= Cardloader.load("CHAR");
         Collections.shuffle(personajes);
         Main.Personajes=new Pile(personajes);
 
-        int players=4;
         for (int a=1; a<=players; a++){
             new Player(a,
                     personajes,
