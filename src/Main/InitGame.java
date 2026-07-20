@@ -54,7 +54,10 @@ public class InitGame {
 
         JButton Nexturn=new GameUI.NextTurn();
         Main.Pantalla.add(Nexturn);
-        Nexturn.setBounds(1820, 0, 100, 100);
+
+
+        JLabel Turn= new GameUI.Turn();
+        Main.Pantalla.add(Turn);
 
 
     }

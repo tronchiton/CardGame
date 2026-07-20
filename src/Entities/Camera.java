@@ -21,7 +21,7 @@ public class Camera extends Entity {
 
         Vector2D r= new Vector2D(this.position,Target);
 
-            this.speed=r;}
+            this.speed=Vector2D.MultiplicarVector2DePorescalar(3,r);}
 
 
 

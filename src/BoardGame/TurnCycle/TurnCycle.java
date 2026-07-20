@@ -2,6 +2,8 @@ package BoardGame.TurnCycle;
 import BoardGame.PlayerRelated.CurrentPlayerManager;
 import BoardGame.PlayerRelated.Player;
 import Main.Main;
+import Visual.GameUI;
+
 public  class TurnCycle {
     public static int turnIndex;
     public static int roundIndex;
@@ -18,6 +20,8 @@ public  class TurnCycle {
 
          Main.Players.get(turnIndex).HisTurn=true;
         CurrentPlayerManager.activePlayer= Main.Players.get(turnIndex);
+
+
     }
     public static void restart(int np){
 
@@ -38,5 +42,6 @@ public  class TurnCycle {
         roundIndex = 0;
         whoIsPlaying(np);
     }
+
 
 }

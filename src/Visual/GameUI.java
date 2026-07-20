@@ -1,6 +1,7 @@
 package Visual;
 
 import BoardGame.TurnCycle.TurnCycle;
+import BoardGame.Write.Write;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,14 +20,28 @@ public class GameUI {
             this.setBorderPainted(false);
             this.setContentAreaFilled(false);
             this.setFocusPainted(false);
+            this.setBounds(1820, 0, 100, 100);
 
             this.addActionListener(e -> {
                 TurnCycle.nextTurn();
             });
+
         }
 
     }
+    public static class Turn extends JLabel {
 
+        public Turn(){
+            this.setBounds(0, 0, 50, 10);
+            this.setFont(Write.loadFont("pixel",14));
+            this.setForeground(Color.BLACK);
+
+        }
+        public void update (int value){
+        this.setText("Turn:"+value);
+        }
+
+    }
 
 
 
