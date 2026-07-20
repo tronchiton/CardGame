@@ -40,6 +40,7 @@ public abstract class Card extends Entity {
     transient Sprite BackSprite;
     transient Sprite DecorationSprite;
 
+    Boolean Up;
 
     public static final Map<Rarity,Color> RarityToColor = Map.of(
             Rarity.Common, Colors.Common,
@@ -62,12 +63,18 @@ public abstract class Card extends Entity {
         double top  = newpos.getY() - (this.sizey * scale) / 2.0;
 
         g2D.rotate(angle, newpos.getX(), newpos.getY());
+if (this.Up) {
+    g2D.drawImage(FrontSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
 
-        g2D.drawImage(FrontSprite.get(),(int)left,(int)top,this.sizex*scale,this.sizey*scale,null);
+    //texto Title
+    Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
 
-        //texto Title
-        Write.write(g2D,Title,"Minecraftia-Regular", RarityToColor.get(this.rarity),14,(int)newpos.getX(), (int)(top+23), Write.alignement.center);
-        Write.write(g2D,Description,"Minecraftia-Regular", Color.BLACK,12,(int)newpos.getX(), (int)(top+70), Write.alignement.center);
+    Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 12, this, 30, 5);
+}
+else{
+    g2D.drawImage(BackSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
+}
+
         g2D.setTransform(oldTransform);
     }
 }

@@ -62,6 +62,7 @@ public class Cardloader {
             carta.setAngularSpeed(0);
             carta.setAngularAcceleration(0);
             carta.angle= (double) 0;
+            carta.Up=true;
                 Main.Entities.add(carta);
 
                 String rutaDecorate="Assets/Decoration/" + carta.ID + ".png";;
