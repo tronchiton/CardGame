@@ -67,6 +67,8 @@ if (this.Up) {
     g2D.drawImage(FrontSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
     g2D.drawImage(DecorationSprite.get(), (int) left+15, (int) top+150, 40*scale , 40*scale, null);
 
+   //test para renderizar tags
+       g2D.drawImage(this.Tags.getFirst().Sprite.get(), (int) left + 15, (int) top + 150, 40 * scale, 40 * scale, null);
 
 
 
