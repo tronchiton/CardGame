@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import static Main.Main.scale;
 
 public class Tag {
-   public transient  Sprite Sprite;
+    public transient  Sprite Sprite;
     final String ID;
     ArrayList<Effect> effects;
 
@@ -40,7 +40,7 @@ public class Tag {
     public static void renderTags(Card Card, Graphics2D g2d, int x, int y){
         int a=0;
         for (Tag tag: Card.Tags){
-            g2d.drawImage( tag.Sprite.get(),  x+a*16*scale, y, 100*scale , 100*scale, null);
+            g2d.drawImage( tag.Sprite.get(),  x+a*7*scale, y, 8*scale , 8*scale, null);
             a++;
         }
     }

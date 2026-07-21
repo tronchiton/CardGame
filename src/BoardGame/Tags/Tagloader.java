@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class Tagloader {
 
-    private static final String RUTA_JSON_FIJA = "Assets/tags_config.json";
+    private static final String RUTA_JSON_FIJA = "Data/Tags.json";
 
     // Todas las variables ahora son estáticas (compartidas a nivel global)
     private static final Gson gson;
