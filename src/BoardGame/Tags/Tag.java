@@ -3,11 +3,12 @@ package BoardGame.Tags;
 import Visual.Sprite;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class Tag {
    public transient  Sprite Sprite;
     final String ID;
-    Effect effect;
+    ArrayList<Effect> effects;
 
     public Tag(String ID){
         this.ID=ID;
@@ -19,7 +20,7 @@ public class Tag {
 
 
     }
-    public Tag(String ID, Effect effect ){
+    public Tag(String ID, ArrayList<Effect> effects ){
         this.ID=ID;
 
         String Ruta="Assets/Tags/" + ID + ".png";
@@ -28,7 +29,7 @@ public class Tag {
         {this.Sprite= new Sprite(Ruta);}
         else{this.Sprite= new Sprite("Assets/Tags/default.png");}
 
-        this.effect=effect;
+        this.effects=effects;
 
 
     }

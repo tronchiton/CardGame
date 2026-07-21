@@ -18,6 +18,8 @@ public class Player {
     public int index;
 
     public CHAR race;
+
+
     public Card Selected;
 
     public int life;

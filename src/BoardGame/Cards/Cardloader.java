@@ -1,6 +1,7 @@
 package BoardGame.Cards;
 
 import BoardGame.Tags.Tag;
+import BoardGame.Tags.Tagloader;
 import Main.Main;
 import Visual.Sprite;
 import com.google.gson.Gson;
@@ -48,8 +49,15 @@ public class Cardloader {
             for (T carta : listaCartas) {
                 carta.Tags=new ArrayList<>();
 
-                for (String tag : carta.NameTags){
-                    carta.Tags.add(new Tag(tag));
+                for (String tagName : carta.NameTags) {
+                    Tag tagCargado = Tagloader.getTag(tagName);
+
+                    if (tagCargado != null) {
+                        carta.Tags.add(tagCargado);
+                    } else {
+                        // Control de errores por si escribiste mal una Tag en el JSON de cartas
+                        System.out.println("Advertencia: La carta '" + carta.ID + "' requiere la etiqueta '" + tagName + "' pero no existe en el Tagloader.");
+                    }
                 }
 
 

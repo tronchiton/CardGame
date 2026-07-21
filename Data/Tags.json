@@ -1,0 +1,148 @@
+[
+  {
+    "ID": "Holy",
+    "effects": [
+      {
+        "Trigger": { "ID": "Undead" },
+        "Target": "Opponent",
+        "effect": "Attack",
+        "number": 5
+      },
+      {
+        "Trigger": { "ID": "Human" },
+        "Target": "Opponent",
+        "effect": "Defense",
+        "number": -1
+      }
+    ]
+  },
+  {
+    "ID": "Fire",
+    "effects": [
+      {
+        "Trigger": { "ID": "Wood" },
+        "Target": "Opponent",
+        "effect": "Attack",
+        "number": 8
+      },
+      {
+        "Trigger": { "ID": "Water" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": -3
+      }
+    ]
+  },
+  {
+    "ID": "Undead",
+    "effects": [
+      {
+        "Trigger": { "ID": "Holy" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": -10
+      },
+      {
+        "Trigger": { "ID": "Poison" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": 2
+      }
+    ]
+  },
+  {
+    "ID": "Poison",
+    "effects": [
+      {
+        "Trigger": { "ID": "Human" },
+        "Target": "Opponent",
+        "effect": "Attack",
+        "number": 3
+      },
+      {
+        "Trigger": { "ID": "Mechanical" },
+        "Target": "Opponent",
+        "effect": "Attack",
+        "number": 0
+      }
+    ]
+  },
+  {
+    "ID": "Shield",
+    "effects": [
+      {
+        "Trigger": { "ID": "Fire" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": 4
+      },
+      {
+        "Trigger": { "ID": "Lightning" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "ID": "Lightning",
+    "effects": [
+      {
+        "Trigger": { "ID": "Water" },
+        "Target": "AnyPlayer",
+        "effect": "Attack",
+        "number": 6
+      },
+      {
+        "Trigger": { "ID": "Shield" },
+        "Target": "Opponent",
+        "effect": "Defense",
+        "number": -4
+      }
+    ]
+  },
+  {
+    "ID": "Water",
+    "effects": [
+      {
+        "Trigger": { "ID": "Fire" },
+        "Target": "Battle",
+        "effect": "Defense",
+        "number": 5
+      }
+    ]
+  },
+  {
+    "ID": "Human",
+    "effects": [
+      {
+        "Trigger": { "ID": "Beast" },
+        "Target": "Opponent",
+        "effect": "Defense",
+        "number": 2
+      }
+    ]
+  },
+  {
+    "ID": "Beast",
+    "effects": [
+      {
+        "Trigger": { "ID": "Human" },
+        "Target": "Opponent",
+        "effect": "Attack",
+        "number": 4
+      }
+    ]
+  },
+  {
+    "ID": "Mechanical",
+    "effects": [
+      {
+        "Trigger": { "ID": "Lightning" },
+        "Target": "You",
+        "effect": "Defense",
+        "number": -5
+      }
+    ]
+  }
+]

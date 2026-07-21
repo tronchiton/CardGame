@@ -13,8 +13,9 @@ public class Effect {
 
     public enum effect{
         Defense,
-        Attack
+        Attack,
     }
+
     effect effect;
 
     int number;
