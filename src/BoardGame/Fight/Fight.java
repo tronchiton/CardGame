@@ -28,5 +28,8 @@ public class Fight {
     public void lose(Player looser){
         System.out.println("Player"+looser.index+" lost");
     }
+    public void checkEffects(Player Player){
+
+    }
 
 }

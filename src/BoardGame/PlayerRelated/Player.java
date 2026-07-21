@@ -2,11 +2,11 @@ package BoardGame.PlayerRelated;
 import BoardGame.Cards.CHAR;
 import BoardGame.Cards.Card;
 import BoardGame.Cards.OBJ;
+import BoardGame.Tags.Tag;
 import Entities.Utils.Point2D;
 import Main.Main;
 
 
-import java.awt.*;
 import java.util.ArrayList;
 
 
@@ -16,6 +16,7 @@ public class Player {
     public ArrayList<OBJ> Active= new ArrayList<>();
     public  boolean HisTurn;
     public int index;
+    public ArrayList<Tag> Tags= new ArrayList<>();
 
     public CHAR race;
 

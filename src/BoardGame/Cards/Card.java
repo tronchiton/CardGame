@@ -65,11 +65,17 @@ public abstract class Card extends Entity {
         g2D.rotate(angle, newpos.getX(), newpos.getY());
 if (this.Up) {
     g2D.drawImage(FrontSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
+    g2D.drawImage(DecorationSprite.get(), (int) left+15, (int) top+150, 40*scale , 40*scale, null);
+
+
+
 
     //texto Title
     Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
 
     Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 14, this, 30, 5);
+
+    Tag.renderTags(this,g2D, (int) left, (int) top);
 }
 else{
     g2D.drawImage(BackSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
