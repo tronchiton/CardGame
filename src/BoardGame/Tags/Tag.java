@@ -12,7 +12,7 @@ import static Main.Main.scale;
 public class Tag {
     public transient  Sprite Sprite;
     final String ID;
-    ArrayList<Effect> effects;
+   public ArrayList<Effect> effects;
 
     public Tag(String ID){
         this.ID=ID;
@@ -44,5 +44,7 @@ public class Tag {
             a++;
         }
     }
+
+
 
 }

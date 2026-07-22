@@ -31,6 +31,7 @@ public class Main {
         Interfaz.add(new MainMenuUI());
         Interfaz.setVisible(true);
 
+
     }
 
     /**

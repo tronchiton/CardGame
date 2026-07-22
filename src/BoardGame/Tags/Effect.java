@@ -1,7 +1,7 @@
 package BoardGame.Tags;
 
 public class Effect {
-    Tag Trigger;
+    public Tag Trigger;
 
     public enum Target{
         AnyPlayer,
@@ -9,16 +9,16 @@ public class Effect {
         Opponent,
         Battle,
     }
-    Target Target;
+    public Target Target;
 
     public enum effect{
         Defense,
         Attack,
     }
 
-    effect effect;
+    public effect effect;
 
-    int number;
+    public int number;
 
     public Effect(Tag Trigger, Target Target, effect effect, int number ){
         this.Trigger=Trigger;
