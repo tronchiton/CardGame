@@ -1,5 +1,6 @@
 package Main;
 
+import Audio.AudioPlayer;
 import BoardGame.Cards.*;
 import BoardGame.PlayerRelated.Player;
 import Entities.Camera;
@@ -27,6 +28,10 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        AudioPlayer.Play("test");
+
+
 
         Interfaz.add(new MainMenuUI());
         Interfaz.setVisible(true);

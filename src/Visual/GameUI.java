@@ -1,5 +1,6 @@
 package Visual;
 
+import Audio.AudioPlayer;
 import BoardGame.TurnCycle.TurnCycle;
 import BoardGame.Write.Write;
 
@@ -32,6 +33,7 @@ public static Round RoundLabel;
             this.setBounds(1820, 0, 100, 100);
 
             this.addActionListener(e -> {
+                AudioPlayer.Play("select");
                 TurnCycle.nextTurn();
             });
 

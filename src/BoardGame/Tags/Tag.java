@@ -14,6 +14,7 @@ public class Tag {
     final String ID;
    public ArrayList<Effect> effects;
 
+
     public Tag(String ID){
         this.ID=ID;
         String Ruta="Assets/Tags/" + ID + ".png";

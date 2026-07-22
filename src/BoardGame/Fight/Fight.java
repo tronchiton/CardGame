@@ -85,5 +85,6 @@ public class Fight {
     }
     public void applyeffects(Effect effect, Player player){
 
+
     }
 }
