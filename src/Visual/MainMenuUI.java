@@ -1,5 +1,6 @@
 package Visual;
 
+import Audio.AudioPlayer;
 import BoardGame.Write.Write;
 import Main.Main;
 
@@ -69,7 +70,10 @@ public class MainMenuUI extends JPanel {
         JButton jugar = new JButton("JUGAR");
         estilizarBoton(jugar, 30);
         jugar.setBounds(860, 730, 200, 70);
-        jugar.addActionListener(e -> Main.startGame(jugadores));
+        jugar.addActionListener(e -> {
+            Main.startGame(jugadores);
+            AudioPlayer.PlaySound("select");
+        });
         this.add(jugar);
     }
 
@@ -79,6 +83,7 @@ public class MainMenuUI extends JPanel {
         boton.addActionListener(e -> {
             jugadores = Math.max(MIN_JUGADORES, Math.min(MAX_JUGADORES, jugadores + delta));
             contadorLabel.setText(String.valueOf(jugadores));
+            AudioPlayer.PlaySound("select");
         });
         return boton;
     }

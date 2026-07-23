@@ -33,7 +33,7 @@ public static Round RoundLabel;
             this.setBounds(1820, 0, 100, 100);
 
             this.addActionListener(e -> {
-                AudioPlayer.Play("select");
+                AudioPlayer.PlaySound("select");
                 TurnCycle.nextTurn();
             });
 
