@@ -72,7 +72,7 @@ public class MainMenuUI extends JPanel {
         jugar.setBounds(860, 730, 200, 70);
         jugar.addActionListener(e -> {
             Main.startGame(jugadores);
-            AudioPlayer.PlaySound("select");
+            AudioPlayer.playSound("select",100);
         });
         this.add(jugar);
     }
@@ -83,7 +83,7 @@ public class MainMenuUI extends JPanel {
         boton.addActionListener(e -> {
             jugadores = Math.max(MIN_JUGADORES, Math.min(MAX_JUGADORES, jugadores + delta));
             contadorLabel.setText(String.valueOf(jugadores));
-            AudioPlayer.PlaySound("select");
+            AudioPlayer.playSound("select",100);
         });
         return boton;
     }

@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 
 public class Main {
+    public static int MouseX;
+    public static int MouseY;
+
     static long tiempoAnterior = System.nanoTime();
     public static  int scale=3;
     static Interfaz Interfaz= new Interfaz();
@@ -29,7 +32,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AudioPlayer.PlaySound("test");
+        AudioPlayer.playSound("test", 5);
 
 
 

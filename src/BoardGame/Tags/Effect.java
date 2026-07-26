@@ -16,7 +16,7 @@ public class Effect {
         Attack,
     }
 
-    public effect effect;
+    public static effect effect;
 
     public int number;
 

@@ -1,11 +1,13 @@
 package BoardGame.Cards;
 
+import BoardGame.Tags.Effect;
 import BoardGame.Tags.Tag;
 import BoardGame.Write.Write;
 import Entities.Entity;
 import Entities.Utils.Point2D;
 import Main.Main;
 import Visual.Colors;
+import Visual.GameUI;
 import Visual.Sprite;
 
 import java.awt.*;
@@ -31,6 +33,7 @@ public abstract class Card extends Entity {
     }
     Rarity rarity;
 
+    boolean ismouseovercard;
     String ID;
     String Title;
     String Description;
@@ -39,8 +42,9 @@ public abstract class Card extends Entity {
     transient Sprite FrontSprite;
     transient Sprite BackSprite;
     transient Sprite DecorationSprite;
+    boolean Selected;
 
-    Boolean Up;
+    boolean Up;
 
     public static final Map<Rarity,Color> RarityToColor = Map.of(
             Rarity.Common, Colors.Common,
@@ -50,6 +54,34 @@ public abstract class Card extends Entity {
             Rarity.Legendary, Colors.Legendary
     );
 
+  @Override  public void act(){
+      this.select();
+      this.mouseovercard();
+  }
+
+    public void select(){
+
+if (ismouseovercard){
+    Selected=true;
+}
+else{Selected=false;}
+
+
+    }
+
+    public void mouseovercard(){
+      Rectangle card= new Rectangle((int) Main.Camara.RespectoCamara(this).getX(), (int) Main.Camara.RespectoCamara(this).getY(),this.sizex*scale,this.sizey*scale);
+
+      Point mouse=new Point(Main.MouseX,Main.MouseY);
+
+      if(card.contains(mouse)){
+          ismouseovercard=true;
+      }
+      else{
+          ismouseovercard=false;
+      }
+
+    }
 
     @Override public void render(Graphics2D g2D){
 
@@ -68,16 +100,19 @@ if (this.Up) {
     g2D.drawImage(DecorationSprite.get(), (int) left+15, (int) top+150, 40*scale , 40*scale, null);
 
 
-
-
-
-
     //texto Title
     Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
 
     Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 14, this, 35, 5);
 
     Tag.renderTags(this,g2D, (int) left+10, (int) top+50);
+
+
+
+    if (Selected==true){GameUI.DrawSelected(this,g2D, (int) left, (int) top);}
+
+
+
 }
 else{
     g2D.drawImage(BackSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);

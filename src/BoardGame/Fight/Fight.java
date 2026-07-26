@@ -84,7 +84,18 @@ public class Fight {
 
     }
     public void applyeffects(Effect effect, Player player){
+  if (Effect.effect == Effect.effect.Defense){
+      if (player == this.defends){
 
+      }
+
+  }
+  if (Effect.effect == Effect.effect.Attack){
+      if (player == this.atacks){
+
+      }
+
+  }
 
     }
 }

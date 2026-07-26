@@ -1,7 +1,6 @@
 package Visual;
 
 
-import BoardGame.TurnCycle.TurnCycle;
 import Entities.Entity;
 import Main.Main;
 import  javax.swing.*;
@@ -40,6 +39,13 @@ public class Interfaz extends JFrame {
                 public void mousePressed(MouseEvent e) {
                     System.out.println("hay");
                 }
+                public void mouseMoved(MouseEvent e) {
+                    Main.MouseX=e.getX();
+                    Main.MouseY=e.getY();
+                }
+
+
+
             };
 
             this.addMouseListener(mouse);
