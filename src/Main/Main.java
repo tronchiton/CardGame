@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class Main {
     public static int MouseX;
     public static int MouseY;
+    public static boolean MouseClicked;
+    public static boolean MouseClicked2;
 
     static long tiempoAnterior = System.nanoTime();
     public static  int scale=3;
@@ -69,6 +71,8 @@ public class Main {
 
 
             }
+            Main.MouseClicked2 = false;
+            Main.MouseClicked = false;
             Pantalla.repaint();}).start();
 
     }

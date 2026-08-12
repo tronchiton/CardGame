@@ -1,5 +1,6 @@
 package BoardGame.Cards;
 
+import Audio.AudioPlayer;
 import BoardGame.Tags.Effect;
 import BoardGame.Tags.Tag;
 import BoardGame.Write.Write;
@@ -55,31 +56,46 @@ public abstract class Card extends Entity {
     );
 
   @Override  public void act(){
-      this.select();
+
       this.mouseovercard();
+
+      if (ismouseovercard||this.Selected){this.select();}
+
   }
 
     public void select(){
 
 if (ismouseovercard){
-    Selected=true;
+   if(Main.MouseClicked&&!Selected){
+       AudioPlayer.playSound("select",100);
+       Selected=true;
+   }
 }
-else{Selected=false;}
-
-
+else{
+    if(Main.MouseClicked2)
+    {
+    AudioPlayer.playSound("select",100);
+    Selected=false;
     }
+}
+}
 
     public void mouseovercard(){
-      Rectangle card= new Rectangle((int) Main.Camara.RespectoCamara(this).getX(), (int) Main.Camara.RespectoCamara(this).getY(),this.sizex*scale,this.sizey*scale);
+        Point2D newpos = Main.Camara.RespectoCamara(this);
 
-      Point mouse=new Point(Main.MouseX,Main.MouseY);
+        int left = (int) (newpos.getX() - (this.sizex * scale) / 2.0);
+        int top  = (int) (newpos.getY() - (this.sizey * scale) / 2.0);
 
-      if(card.contains(mouse)){
-          ismouseovercard=true;
-      }
-      else{
-          ismouseovercard=false;
-      }
+        Rectangle card= new Rectangle(left, top, this.sizex*scale, this.sizey*scale);
+
+        Point mouse=new Point(Main.MouseX,Main.MouseY);
+
+        if(card.contains(mouse)){
+            ismouseovercard=true;
+        }
+        else{
+            ismouseovercard=false;
+        }
 
     }
 
@@ -109,7 +125,7 @@ if (this.Up) {
 
 
 
-    if (Selected==true){GameUI.DrawSelected(this,g2D, (int) left, (int) top);}
+    if (Selected==true||ismouseovercard){GameUI.DrawSelected(this,g2D, (int) left, (int) top);}
 
 
 

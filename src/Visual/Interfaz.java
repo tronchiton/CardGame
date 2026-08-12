@@ -37,7 +37,11 @@ public class Interfaz extends JFrame {
 
                 @Override
                 public void mousePressed(MouseEvent e) {
-                    System.out.println("hay");
+                    if (javax.swing.SwingUtilities.isLeftMouseButton(e)) {
+                        Main.MouseClicked = true;
+                    } else if (javax.swing.SwingUtilities.isRightMouseButton(e)) {
+                        Main.MouseClicked2 = true;
+                    }
                 }
                 public void mouseMoved(MouseEvent e) {
                     Main.MouseX=e.getX();
