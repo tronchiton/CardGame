@@ -32,6 +32,9 @@ public class InitGame {
 
         test.setPosition(Main.Players.get(0).Position);
 
+
+
+
         ArrayList<OBJ> objetos=Cardloader.load("OBJ");
         Collections.shuffle(objetos);
         Pile PileObjetos=new Pile(objetos);
@@ -63,5 +66,10 @@ public class InitGame {
         GameUI.RoundLabel=Round;
 
 
+
+
+        Main.Players.get(0).drawFrom(PileObjetos);
+        Main.Players.get(0).drawFrom(PileObjetos);
+        System.out.println("ATENTOOOOO"+Main.Players.get(0).Hand.toString());
     }
 }

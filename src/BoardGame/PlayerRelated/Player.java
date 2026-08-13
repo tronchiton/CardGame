@@ -2,8 +2,10 @@ package BoardGame.PlayerRelated;
 import BoardGame.Cards.CHAR;
 import BoardGame.Cards.Card;
 import BoardGame.Cards.OBJ;
+import BoardGame.Cards.Pile;
 import BoardGame.Tags.Tag;
 import Entities.Utils.Point2D;
+import Entities.Utils.Vector2D;
 import Main.Main;
 
 
@@ -12,7 +14,7 @@ import java.util.ArrayList;
 
 public class Player {
    public Point2D Position;
-    public ArrayList<Card> Hand= new ArrayList<>();
+    public ArrayList<OBJ> Hand= new ArrayList<>();
     public ArrayList<OBJ> Active= new ArrayList<>();
     public  boolean HisTurn;
     public int index;
@@ -21,16 +23,23 @@ public class Player {
     public CHAR race;
 
 
-    public Card Selected;
-
     public int life;
     public int DFS;
     public int ATK;
     public int ATKDice;
     public int DFSDice;
 
-    public void draw(Card card){
+    public void draw(OBJ card){
         this.Hand.add(card);
+        card.setPosition(this.Position);
+        this.UpdateShowHand();
+    }
+    public void drawFrom(Pile pile){
+        if (!pile.Cards.isEmpty()) {
+            this.Hand.add((OBJ) pile.Cards.remove(0));
+            this.UpdateShowHand();
+        }
+        else {System.out.println("No quedan cartas en la pila.");}
     }
 
 
@@ -61,6 +70,17 @@ public class Player {
         this.ATK=this.race.BaseATK+atk;
         this.DFSDice=this.race.DFSDice;
         this.ATKDice=this.race.ATKDice;
+    }
+
+    public void UpdateShowHand(){
+        int a=0;
+
+        for (OBJ card : this.Hand){
+            Point2D newpos=new Point2D(this.Position,new Vector2D(-960+card.sizex,540-card.sizex));
+            card.setPosition(new Point2D(newpos,new Vector2D(a*card.sizex,0)));
+         a++;
+        }
+
     }
 
 }
