@@ -27,14 +27,6 @@ public class InitGame {
         }
 
 
-        CHAR test= (CHAR) Main.Personajes.getCards().get(0);
-        System.out.println(test.toString());
-
-        test.setPosition(Main.Players.get(0).Position);
-
-
-
-
         ArrayList<OBJ> objetos=Cardloader.load("OBJ");
         Collections.shuffle(objetos);
         Pile PileObjetos=new Pile(objetos);

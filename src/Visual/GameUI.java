@@ -2,12 +2,15 @@ package Visual;
 
 import Audio.AudioPlayer;
 import BoardGame.Cards.Card;
+import BoardGame.Cards.OBJ;
+import BoardGame.PlayerRelated.CurrentPlayerManager;
 import BoardGame.TurnCycle.TurnCycle;
 import BoardGame.Write.Write;
 
 import javax.swing.*;
 import java.awt.*;
 
+import static Main.Main.Camara;
 import static Main.Main.scale;
 
 public class GameUI {
@@ -81,7 +84,7 @@ public static Round RoundLabel;
     }
 
 
-    public static void DrawSelected(Card card, Graphics2D g2d, int cx, int cy){
+    public static void DrawSelected(Card card, Graphics2D g2d, int cx, int cy, int cardWidth, int cardHeight){
         Sprite selected = new Sprite("Assets/UI/selector.png");
         int x = selected.get().getWidth();
         int y = selected.get().getHeight();
@@ -90,15 +93,37 @@ public static Round RoundLabel;
         g2d.drawImage(selected.get(), cx-x, cy-y, x * scale, y * scale, null);
 
         // 2. Esquina Inferior Derecha (Invertido en X e Y)
-        g2d.drawImage(selected.get(), cx+x + (card.sizex * scale), cy+y + (card.sizey * scale), -x * scale, -y * scale, null);
+        g2d.drawImage(selected.get(), cx+x + cardWidth, cy+y + cardHeight, -x * scale, -y * scale, null);
 
         // 3. Esquina Inferior Izquierda (Invertido en Y)
-        g2d.drawImage(selected.get(), cx-x, cy+y + (card.sizey * scale), x * scale, -y * scale, null);
+        g2d.drawImage(selected.get(), cx-x, cy+y + cardHeight, x * scale, -y * scale, null);
 
         // 4. Esquina Superior Derecha (Invertido en X)
-        g2d.drawImage(selected.get(), cx+x + (card.sizex * scale), cy-y, -x * scale, y * scale, null);
+        g2d.drawImage(selected.get(), cx+x + cardWidth, cy-y, -x * scale, y * scale, null);
     }
 
+public static class Equip extends JButton{
+    private final ImageIcon imgBase=ScaledIcon("ArrowbuttonUp",100,100);
+    private final ImageIcon imgHover=ScaledIcon("ArrowbuttonDown",100,100);
+    OBJ card;
 
+
+    public Equip(OBJ card){
+        this.card=card;
+        this.setIcon(imgBase);
+        this.setPressedIcon(imgHover);
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setBounds((int) Camara.RespectoCamara(card).getX(), (int) Camara.RespectoCamara(card).getY(), 100, 100);
+
+        this.addActionListener(e -> {
+            AudioPlayer.playSound("select",100);
+            CurrentPlayerManager.activePlayer.Active.add(card);
+        });
+
+    }
+
+}
 
 }

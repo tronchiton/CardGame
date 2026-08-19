@@ -55,30 +55,37 @@ public abstract class Card extends Entity {
             Rarity.Legendary, Colors.Legendary
     );
 
-  @Override  public void act(){
+    @Override  public void act(){
 
-      this.mouseovercard();
+        this.mouseovercard();
 
-      if (ismouseovercard||this.Selected){this.select();}
+        this.whoble(this.ismouseovercard);
 
-  }
+        if (Selected){this.ShowActions((OBJ) this);}
+
+        if (ismouseovercard||this.Selected){this.select();}
+
+    }
+    public void ShowActions(OBJ card){
+
+    }
 
     public void select(){
 
-if (ismouseovercard){
-   if(Main.MouseClicked&&!Selected){
-       AudioPlayer.playSound("select",100);
-       Selected=true;
-   }
-}
-else{
-    if(Main.MouseClicked2)
-    {
-    AudioPlayer.playSound("select",100);
-    Selected=false;
+        if (ismouseovercard){
+            if(Main.MouseClicked&&!Selected){
+                AudioPlayer.playSound("select",100);
+                Selected=true;
+            }
+        }
+        else{
+            if(Main.MouseClicked2)
+            {
+                AudioPlayer.playSound("select",100);
+                Selected=false;
+            }
+        }
     }
-}
-}
 
     public void mouseovercard(){
         Point2D newpos = Main.Camara.RespectoCamara(this);
@@ -106,35 +113,37 @@ else{
         g2D.setColor(Color.BLUE);
         Point2D newpos = Main.Camara.RespectoCamara(this);
 
+        double renderScale = scale * this.getCurrentScale(); // escala base + crecimiento suave del whoble
 
-        double left = newpos.getX() - (this.sizex * scale) / 2.0;
-        double top  = newpos.getY() - (this.sizey * scale) / 2.0;
+        double left = newpos.getX() - (this.sizex * renderScale) / 2.0;
+        double top  = newpos.getY() - (this.sizey * renderScale) / 2.0;
+        int renderW = (int) Math.round(this.sizex * renderScale);
+        int renderH = (int) Math.round(this.sizey * renderScale);
 
         g2D.rotate(angle, newpos.getX(), newpos.getY());
-if (this.Up) {
-    g2D.drawImage(FrontSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
-    g2D.drawImage(DecorationSprite.get(), (int) left+15, (int) top+150, 40*scale , 40*scale, null);
+        if (this.Up) {
+            g2D.drawImage(FrontSprite.get(), (int) left, (int) top, renderW, renderH, null);
+            g2D.drawImage(DecorationSprite.get(), (int) left+15, (int) top+150, 40*scale , 40*scale, null);
 
 
-    //texto Title
-    Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
+            //texto Title
+            Write.write(g2D, Title, "Minecraftia-Regular", RarityToColor.get(this.rarity), 14, (int) newpos.getX(), (int) (top + 23), Write.alignement.center);
 
-    Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 14, this, 35, 5);
+            Write.writeOnCard(g2D, Description, "Minecraftia-Regular", Color.BLACK, 14, this, 35, 5);
 
-    Tag.renderTags(this,g2D, (int) left+10, (int) top+50);
-
-
-
-    if (Selected==true||ismouseovercard){GameUI.DrawSelected(this,g2D, (int) left, (int) top);}
+            Tag.renderTags(this,g2D, (int) left+10, (int) top+50);
 
 
 
-}
-else{
-    g2D.drawImage(BackSprite.get(), (int) left, (int) top, this.sizex * scale, this.sizey * scale, null);
-}
+            if (Selected==true||ismouseovercard){GameUI.DrawSelected(this,g2D, (int) left, (int) top, renderW, renderH);}
+
+
+
+        }
+        else{
+            g2D.drawImage(BackSprite.get(), (int) left, (int) top, renderW, renderH, null);
+        }
 
         g2D.setTransform(oldTransform);
     }
 }
-

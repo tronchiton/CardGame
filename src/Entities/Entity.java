@@ -22,16 +22,17 @@ public class Entity {
     public Double angle;
 
     private double currentScale = 1.0;         // Escala actual
-    private double targetScale = 1.15;         // Escala base (un poco más grande que 1.0)
+    private double targetScale = 1.0;          // Escala objetivo (1.0 en reposo, crece un poco con el mouse encima)
     private double scaleSpeed = 0.0;           // Velocidad de cambio de tamaño
     private double scaleAcceleration = 0.0;    // Aceleración del tamaño
-    private static final double SCALE_K = 150.0;   // Fuerza de retorno del muelle de tamaño
-    private static final double SCALE_DAMP = 8.0;  // Amortiguación de tamaño
-    private static final double SCALE_IMPULSE = 3.5; // Intensidad del temblor de tamaño
+    private static final double SCALE_K = 90.0;      // Fuerza de retorno del muelle de tamaño
+    private static final double SCALE_DAMP = 14.0;   // Amortiguación de tamaño (suave, sin rebote)
+    private static final double SCALE_IMPULSE = 0.4; // Pequeño temblor extra sobre el tamaño
+    private static final double HOVER_SCALE = 1.08;  // Cuanto crece la carta al pasar el mouse por encima
 
-    private static final double SPRING_K = 40.0;
-    private static final double DAMPING = 5.0;
-    private static final double IMPULSE_FORCE = 22.0;
+    private static final double SPRING_K = 22.0;     // Fuerza de retorno del muelle de rotación
+    private static final double DAMPING = 6.0;       // Amortiguación de rotación
+    private static final double IMPULSE_FORCE = 8.0; // Intensidad del temblor de rotación (suave)
 
     public Entity(double x, double y, int sizex, int sizey) {
         this.position = new Point2D(x, y);
@@ -108,23 +109,34 @@ public class Entity {
         this.anguralspeed+=angulara*dt;
         this.angle+=anguralspeed*dt;
 
+        this.scaleSpeed+=scaleAcceleration*dt;
+        this.currentScale+=scaleSpeed*dt;
 
     }
 
-    public void whoble(){
+    /**
+     * Temblor suave de la carta. Llamar cada frame con active=true mientras el mouse
+     * esté encima (o false el resto del tiempo, para que vuelva a su posición/tamaño de reposo).
+     */
+    public void whoble(boolean active){
         // --- TEMBLOR DE ROTACIÓN ---
         double springForce = -SPRING_K * this.angle;
         double dampingForce = -DAMPING * this.anguralspeed;
-        double randomImpulse = (random.nextDouble() * 2.0 - 1.0) * IMPULSE_FORCE;
+        double randomImpulse = active ? (random.nextDouble() * 2.0 - 1.0) * IMPULSE_FORCE : 0.0;
         this.angulara = springForce + dampingForce + randomImpulse;
 
         // --- TEMBLOR DE TAMAÑO (DENTRO DEL WOBBLE) ---
-        // El muelle intenta mantener la escala en targetScale (1.15)
+        // El muelle lleva la escala a HOVER_SCALE si el mouse está encima, o a 1.0 (reposo) si no.
+        this.targetScale = active ? HOVER_SCALE : 1.0;
         double scaleSpringForce = -SCALE_K * (this.currentScale - this.targetScale);
         double scaleDampingForce = -SCALE_DAMP * this.scaleSpeed;
-        // Pequeño impacto aleatorio que hace vibrar el tamaño independientemente
-        double scaleRandomImpulse = (random.nextDouble() * 2.0 - 1.0) * SCALE_IMPULSE;
+        // Pequeño impacto aleatorio que hace vibrar el tamaño independientemente, solo con el mouse encima
+        double scaleRandomImpulse = active ? (random.nextDouble() * 2.0 - 1.0) * SCALE_IMPULSE : 0.0;
         this.scaleAcceleration = scaleSpringForce + scaleDampingForce + scaleRandomImpulse;
+    }
+
+    public double getCurrentScale(){
+        return this.currentScale;
     }
 
 
@@ -149,4 +161,3 @@ public class Entity {
     public void act(){}
 
 }
-

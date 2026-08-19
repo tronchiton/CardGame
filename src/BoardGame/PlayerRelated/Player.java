@@ -73,14 +73,31 @@ public class Player {
     }
 
     public void UpdateShowHand(){
-        int a=0;
+        int n = this.Hand.size();
+        if (n == 0) return;
 
+        double sideMargin = 60;    // margen lateral minimo respecto a los bordes de la pantalla
+        double bottomMargin = 30;  // separacion respecto al borde inferior de la pantalla
+        double maxRowWidth = 1920 - sideMargin * 2;
+
+        int a=0;
         for (OBJ card : this.Hand){
-            Point2D newpos=new Point2D(this.Position,new Vector2D(-960+card.sizex,540-card.sizex));
-            card.setPosition(new Point2D(newpos,new Vector2D(a*card.sizex,0)));
-         a++;
+            int cardWidth  = card.sizex * Main.scale;
+            int cardHeight = card.sizey * Main.scale;
+            double gap = 12; // separacion entre cartas cuando hay sitio de sobra
+
+            // Si la mano es muy grande, el margen se reduce (e incluso se solapan un poco) para no salirse de la pantalla.
+            double spacing = Math.min(cardWidth + gap, maxRowWidth / n);
+            spacing = Math.max(spacing, cardWidth * 0.25);
+
+            double offsetX = (a - (n - 1) / 2.0) * spacing; // centra el conjunto en el eje x
+            double offsetY = 540 - bottomMargin - cardHeight / 2.0; // pega la fila al borde inferior
+
+            card.setPosition(new Point2D(this.Position, new Vector2D(offsetX, offsetY)));
+            a++;
         }
 
     }
+
 
 }

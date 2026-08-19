@@ -1,6 +1,8 @@
 package BoardGame.Cards;
 
 
+import Visual.GameUI;
+
 import java.util.Arrays;
 
 public class OBJ extends Card{
@@ -26,6 +28,10 @@ public class OBJ extends Card{
                  ", BonusDFS=" + BonusDFS +
                  '}';
       };
+
+    @Override public void ShowActions(OBJ card){
+        new GameUI.Equip((OBJ) card);
+    }
    }
 
 

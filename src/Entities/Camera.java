@@ -2,6 +2,7 @@ package Entities;
 
 
 import BoardGame.PlayerRelated.CurrentPlayerManager;
+import BoardGame.PlayerRelated.Player;
 import Entities.Utils.Point2D;
 import Entities.Utils.Vector2D;
 import Main.Main;
@@ -31,6 +32,7 @@ public class Camera extends Entity {
         double newy=(int)ser.position.getY()-this.position.getY()+1080/2;
         return new Point2D(newx,newy);
     }
+
 
     public void act(){
         follow(CurrentPlayerManager.activePlayer.Position);
